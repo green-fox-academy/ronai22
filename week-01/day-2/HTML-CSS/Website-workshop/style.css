@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    background-image: url("img/topography.png");
+    background-repeat: repeat;
+    font-family: consolas, courier;
+    line-height: 1.7em;
+}
+
+nav{
+    background-color: #333333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo{
+    margin: 12px 0 0 10%;
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0 10% 0 0;
+    overflow: hidden;
+}
+
+li a, .purple{
+    color: #ff0099;
+ }
+
+li a {
+    display: block;
+    float: right;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+main{
+    margin: 0 10%;
+}
+
+h1, h2 {
+    font-family: 'PT Mono', monospace;
+}
+
+.name{
+    margin: 200px 0px 0px 0px;
+    font-size: 42px;
+}
+
+.divider{
+    margin: 60px 0px 60px 0px;
+    text-align: center;
+ }
+
+.wiki{
+    font-size: 36px;
+    text-align: center;
+}
