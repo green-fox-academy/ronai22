@@ -1,1 +1,2 @@
 content-file 04
+new content
