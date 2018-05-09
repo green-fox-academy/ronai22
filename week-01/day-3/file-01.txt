@@ -1,2 +1,1 @@
-content-file-01
-and some more content
+new content to test reset head
