@@ -1,4 +1,4 @@
-# Seagal Sylabus
+# Seagal Syllabus
 [Seagal syllabus](https://github.com/green-fox-academy/Seagal-syllabus)
 
 # Links to other repositories
