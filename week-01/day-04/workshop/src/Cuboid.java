@@ -7,10 +7,16 @@ public class Cuboid {
         // Surface Area: 600
         // Volume: 1000
 
-        int cuboidSideA = 10;
-        int cuboidSideB = 6;
-        int cuboidSideC = 5;
+        double cuboidSideA = 10.2;
+        double cuboidSideB = 15.882;
+        double cuboidSideC = 20.881;
 
+        double surfaceArea = 2 * (cuboidSideA * cuboidSideB + cuboidSideB * cuboidSideC + cuboidSideA * cuboidSideC);
+
+        double volume = cuboidSideA * cuboidSideB * cuboidSideC;
+
+        System.out.println("Surface Area: " + surfaceArea);
+        System.out.println("Volume: " + volume);
 
     }
 
