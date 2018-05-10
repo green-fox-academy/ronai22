@@ -1,5 +1,6 @@
 public class SecondsInADay {
     public static void main(String[] args) {
+
         int currentHours = 16;
         int currentMinutes = 22;
         int currentSeconds = 13;
