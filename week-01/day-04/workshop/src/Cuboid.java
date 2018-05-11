@@ -12,7 +12,6 @@ public class Cuboid {
         double cuboidSideC = 20.881;
 
         double surfaceArea = 2 * (cuboidSideA * cuboidSideB + cuboidSideB * cuboidSideC + cuboidSideA * cuboidSideC);
-
         double volume = cuboidSideA * cuboidSideB * cuboidSideC;
 
         System.out.println("Surface Area: " + surfaceArea);

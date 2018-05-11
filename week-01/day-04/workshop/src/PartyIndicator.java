@@ -18,7 +18,20 @@ public class PartyIndicator {
         // It should print: Sausage party
         // If no girls are coming, regardless the count of the people
 
-        Scanner scanner =
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please write the number of the girls attending the party:");
+        int numGirls = scanner.nextInt();
+        System.out.println("Please write the number of the boys attending the party:");
+        int numBoys = scanner.nextInt();
 
+        if (numGirls == 0) {
+            System.out.println("Sausage Party");
+        } else if ((numBoys + numGirls) < 20) {
+            System.out.println("Average party...");
+        } else if (((numBoys + numGirls) > 20) && (numBoys == numGirls)) {
+            System.out.println("The party is exellent!");
+        } else {
+            System.out.println("Quite cool party!");
+        }
     }
 }

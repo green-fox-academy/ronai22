@@ -1,9 +1,9 @@
 public class SecondsInADay {
     public static void main(String[] args) {
 
-        int currentHours = 16;
-        int currentMinutes = 22;
-        int currentSeconds = 13;
+        int currentHours = 14;
+        int currentMinutes = 34;
+        int currentSeconds = 42;
 
         int remainingSeconds = (23 - currentHours) * 3600 + (59 - currentMinutes) * 60 + (60 - currentSeconds);
 

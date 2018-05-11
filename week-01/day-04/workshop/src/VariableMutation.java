@@ -41,7 +41,6 @@ public class VariableMutation {
         int g1 = 350;
         int g2 = 200;
         // tell if the double of g2 is bigger than g1 (print as a boolean)
-
         boolean numberRelationG = (g2 * g2) > g1;
         System.out.println(numberRelationG);
 
@@ -60,7 +59,7 @@ public class VariableMutation {
 
         int j = 1521;
         // tell if j is dividable by 3 or 5 (print as a boolean)
-        boolean divisorTellJ = (j % 3) < 1 || (j % 5) < 1;
+        boolean divisorTellJ = (j % 3) == 0 || (j % 5) == 0;
         System.out.println(divisorTellJ);
 
 
