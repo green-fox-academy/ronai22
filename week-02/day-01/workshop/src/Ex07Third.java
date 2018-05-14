@@ -5,12 +5,10 @@ public class Ex07Third {
     //   with the following content: `[4, 5, 6, 7]`
     // - Print the third element of `q`
     int[] q = {4, 5, 6, 7};
-    int third = chooseNum(q);
-    System.out.println(third);
+    chooseNum(q);
 
   }
-  public static int chooseNum (int[] q){
-    int third = q[2];
-    return third;
+  public static void chooseNum (int[] q){
+    System.out.println(q[2]);
     }
 }
