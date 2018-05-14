@@ -6,7 +6,7 @@ public class Ex04Sum {
 
   // - Write a function called `sum` that sum all the numbers
   //   until the given parameter and returns with an integer
-    int until = 5;
+    int until = 15;
     int sum = 0;
     sum = summary(until);
     System.out.println(sum);
