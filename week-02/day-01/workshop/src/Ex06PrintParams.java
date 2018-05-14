@@ -8,10 +8,16 @@ public class Ex06PrintParams {
     // - It can have any number of parameters
 
     // Examples
-    // printParams("first")
-    // printParams("first", "second")
-    // printParams("first", "second", "third", "fourh")
+     printParams("first");
+     printParams("first", "second");
+     printParams("first", "second", "third", "fourh");
     // ...
-    
+
+
+  }
+  public static void printParams (String... params){
+    for (String param : params) {
+      System.out.println(param);
+    }
   }
 }
