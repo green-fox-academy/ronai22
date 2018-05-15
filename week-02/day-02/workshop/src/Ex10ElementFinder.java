@@ -31,7 +31,6 @@ public class Ex10ElementFinder {
     } else {
       checkingResult = "Nooooooooooooo";
     }
-
     return checkingResult;
   }
 
