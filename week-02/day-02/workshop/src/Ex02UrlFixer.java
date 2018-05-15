@@ -9,7 +9,7 @@ public class Ex02UrlFixer {
     // url = url.replace("https", "https:");
     // url = url.replace("bots", "odds");
 
-    // url = url.substring(0, 5) + ":" + url.substring(5, url.length());
+    // url = url.substring(0, 5) + ":" + url.substring(5);
     // int index = url.indexOf("bots", 4);
     // url = url.substring(0, index) + "odds";
 
