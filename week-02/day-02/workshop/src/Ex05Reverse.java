@@ -4,10 +4,15 @@ public class Ex05Reverse {
     // Create a method that can reverse a String, which is passed as the parameter
     // Use it on this reversed string to check it!
     // Try to solve this using charAt() first, and optionally anything else after.
-    String normal = "";
-    for (int i = (reversed.length() - 1); i >= 0 ; i--) {
-      normal = normal + reversed.charAt(i);
+
+    neworder(reversed);
+
+  }
+  public static void neworder (String reversed) {
+    String reorder = "";
+    for (int i = 0; i < reversed.length(); i++) {
+      reorder += reversed.charAt(reversed.length() - 1 - i);
     }
-    System.out.println(normal);
+    System.out.println(reorder);
   }
 }
