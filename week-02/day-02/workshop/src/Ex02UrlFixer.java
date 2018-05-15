@@ -6,7 +6,7 @@ public class Ex02UrlFixer {
     // Also, the URL is missing a crutial component, find out what it is and insert it too!
     // Try to solve it more than once using different String functions!
 
-    // url = url.replace("https", "https:" );
+    // url = url.replace("https", "https:");
     // url = url.replace("bots", "odds");
 
     // url = url.substring(0, 5) + ":" + url.substring(5, url.length());
