@@ -14,12 +14,12 @@ public class Ex06CopyFile {
     String fileName = "my-file.txt";
     System.out.println(fileCopyCheck(fileName));
   }
-  
+
   public static boolean fileCopyCheck (String fileName) {
     try {
       Path sourceFilepath = Paths.get(fileName);
       Path copyFilepath = Paths.get("target.txt");
-      Files.copy(sourceFilepath, copyFilepath, StandardCopyOption.REPLACE_EXISTING);
+      Files.copy(sourceFilepath, copyFilepath);
     }
     catch (Exception e) {
     return false;
