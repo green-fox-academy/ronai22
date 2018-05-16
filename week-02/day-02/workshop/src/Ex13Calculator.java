@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ex13Calculator {
@@ -21,25 +19,21 @@ public class Ex13Calculator {
     // Print the result to the prompt
     // Exit
     Scanner scanner = new Scanner(System.in);
-
-
     System.out.println("Please type in the expression:");
     String input = scanner.nextLine();
-
-
     char operation;
-    int numberOne;
-    int numberTwo;
+    double numberOne;
+    double numberTwo;
     operation = input.charAt(0);
     String[] items = input.split(" ", 3);
-    numberOne = Integer.valueOf(items[1]);
-    numberTwo = Integer.valueOf(items[2]);
+    numberOne = Double.valueOf(items[1]);
+    numberTwo = Double.valueOf(items[2]);
 
     System.out.println(calculator(numberOne, numberTwo, operation));
 
   }
-  public static int calculator (int numberOne, int numberTwo, char operation){
-    int sum = 0;
+  public static double calculator (double numberOne, double numberTwo, char operation){
+    double sum = 0;
     if (operation == '+') {
       sum = numberOne + numberTwo;
     } else if (operation == '-') {
