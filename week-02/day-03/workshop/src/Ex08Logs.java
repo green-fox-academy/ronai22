@@ -13,12 +13,12 @@ public class Ex08Logs {
     try {
       Path filePath = Paths.get("log.txt");
       List<String> list = Files.readAllLines(filePath);
-      ArrayList<String> uniqueList;
-      uniqueList = uniqueIpCheck(list);
+      ArrayList<String> uniqueList = uniqueIpCheck(list);
 
       for (int i = 0; i <uniqueList.size() ; i++) {
         System.out.println(uniqueList.get(i));
       }
+
       System.out.println("A Get/Post request ratio: " + ratioChecker(list));
 
     } catch (Exception e) {
@@ -44,9 +44,9 @@ public class Ex08Logs {
       String temp = (String) list.get(i);
       String[] temp2 = temp.split("   ");
       if (temp2[2].contains("P")) {
-        post = post + 1;
-      } else if (temp2[2].contains("G")) {
-        get = get + 1;
+        post++;
+      } else {
+        get++;
       }
     } return get/post;
   }

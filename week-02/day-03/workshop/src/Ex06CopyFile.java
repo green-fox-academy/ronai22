@@ -1,6 +1,7 @@
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 //import java.util.Scanner;
 
 public class Ex06CopyFile {
@@ -13,16 +14,16 @@ public class Ex06CopyFile {
     String fileName = "my-file.txt";
     System.out.println(fileCopyCheck(fileName));
   }
+  
   public static boolean fileCopyCheck (String fileName) {
-    boolean check = true;
     try {
       Path sourceFilepath = Paths.get(fileName);
       Path copyFilepath = Paths.get("target.txt");
-      Files.copy(sourceFilepath, copyFilepath);
+      Files.copy(sourceFilepath, copyFilepath, StandardCopyOption.REPLACE_EXISTING);
     }
     catch (Exception e) {
-      check = false;
+    return false;
     }
-    return check;
+    return true;
   }
 }
