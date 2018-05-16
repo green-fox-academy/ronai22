@@ -9,17 +9,17 @@ public class Ex03CountLines {
     // then returns the number of lines the file contains.
     // It should return zero if it can't open the file, and
     // should not raise any error.
+    //Scanner scanner = new Scanner(System.in);
+    //String fileName = scanner.nextLine();
     String fileName = "my-file.txt";
     System.out.println(lineCount(fileName));
   }
   public static int lineCount (String fileName){
     int lineNum = 0;
     try {
-      Path filePath = Paths.get("/Users/ronaipeter/greenfox/ronai22/week-02/day-03/workshop/" + fileName);
+      Path filePath = Paths.get(fileName);
       List<String> lines = Files.readAllLines(filePath);
-      for (String s: lines) {
-        lineNum += 1;
-      }
+      lineNum = lines.size();
     }
     catch (Exception e){
     }
