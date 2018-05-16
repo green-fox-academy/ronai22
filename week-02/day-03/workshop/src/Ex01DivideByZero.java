@@ -10,10 +10,8 @@ public class Ex01DivideByZero {
     System.out.println("Please type in a number, I am going to divide 10 with it.");
     int divisor = scanner.nextInt();
     int result = 0;
-    
     divider(divisor, result);
   }
-
   public static int divider (int divisor, int result) {
     try {
       result = 10 / divisor;
