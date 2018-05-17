@@ -11,6 +11,10 @@ public class Ex04GoToCenter {
     // The x and y coordinates of the line's starting point
     // and draws a line from that point to the center of the canvas.
     // Draw 3 lines with that function. Use loop for that.
+    drawLinesToTheCenter(graphics);
+
+  }
+  public static void drawLinesToTheCenter (Graphics graphics) {
     Scanner scanner = new Scanner(System.in);
 
     for (int i = 0; i < 3 ; i++) {
