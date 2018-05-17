@@ -1,17 +1,23 @@
+
 import javax.swing.*;
 
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Ex01LineInTheMiddle {
-  public static void mainDraw(Graphics graphics){
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
+public class Ex02ColoredBox {
+  public static void mainDraw(Graphics graphics) {
+    // Draw a box that has different colored lines on each edge.
+    graphics.setColor(Color.BLUE);
+    graphics.drawLine(10, 10, 10, 200);
     graphics.setColor(Color.RED);
-    graphics.drawLine(0, WIDTH / 2, WIDTH, WIDTH / 2);
-    graphics.setColor(Color.GREEN);
-    graphics.drawLine(WIDTH / 2, 0, WIDTH / 2, WIDTH);
+    graphics.drawLine(10, 200, 200, 200);
+    graphics.setColor(Color.PINK);
+    graphics.drawLine(200, 200, 200, 10);
+    graphics.setColor(Color.BLACK);
+    graphics.drawLine(200, 10, 10, 10);
+
+
   }
 
   // Don't touch the code below
@@ -19,7 +25,7 @@ public class Ex01LineInTheMiddle {
   static int HEIGHT = 343;
 
   public static void main(String[] args) {
-    JFrame jFrame = new JFrame("Ex01LineInTheMiddle");
+    JFrame jFrame = new JFrame("Ex02ColoredBox");
     jFrame.setSize(new Dimension(WIDTH, HEIGHT));
     jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
     jFrame.add(new ImagePanel());
