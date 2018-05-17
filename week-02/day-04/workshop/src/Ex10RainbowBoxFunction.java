@@ -11,7 +11,8 @@ public class Ex10RainbowBoxFunction {
     // The square size, and the fill color,
     // and draws a square of that size and color to the center of the canvas.
     // Create a loop that fills the canvas with rainbow colored squares.
-    // Random random = new Random();
+
+    Random random = new Random();
     // int squareSizeStart = random.nextInt(200);
     // rainbowSquares(squareSizeStart, graphics);
 
