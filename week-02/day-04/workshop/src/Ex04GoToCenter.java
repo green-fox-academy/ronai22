@@ -16,7 +16,7 @@ public class Ex04GoToCenter {
 
   }
   public static void drawLinesToTheCenter (Graphics graphics) {
-    for (int i = 0; i < 10000 ; i++) {
+    for (int i = 0; i < 100000 ; i++) {
       Random random = new Random();
       int inputCoordinateX = random.nextInt(600);
       int inputCoordinateY = random.nextInt(600);
