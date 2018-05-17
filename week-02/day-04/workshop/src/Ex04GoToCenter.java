@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.Scanner;
+import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
@@ -11,20 +11,18 @@ public class Ex04GoToCenter {
     // The x and y coordinates of the line's starting point
     // and draws a line from that point to the center of the canvas.
     // Draw 3 lines with that function. Use loop for that.
+
     drawLinesToTheCenter(graphics);
 
   }
   public static void drawLinesToTheCenter (Graphics graphics) {
-    Scanner scanner = new Scanner(System.in);
-
-    for (int i = 0; i < 3 ; i++) {
-      System.out.println("Please type in two numbers between 0 and 600:");
-      int inputCoordinateX = scanner.nextInt();
-      int inputCoordinateY = scanner.nextInt();
-      graphics.setColor(Color.RED);
+    for (int i = 0; i < 10000 ; i++) {
+      Random random = new Random();
+      int inputCoordinateX = random.nextInt(600);
+      int inputCoordinateY = random.nextInt(600);
+      graphics.setColor(new Color((random.nextInt(256)),(random.nextInt(256)), (random.nextInt(256))));
       graphics.drawLine(inputCoordinateX, inputCoordinateY, WIDTH / 2, HEIGHT / 2);
     }
-
   }
 
 
