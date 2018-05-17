@@ -8,7 +8,8 @@ public class Ex19Reverse {
     // - Print the elements of the reversed `aj`
     int[] aj = {3, 4, 5, 6, 7};
     // int[] temp = {3, 4, 5, 6, 7};
-    int[] temp = aj;
+    // int[] temp = aj;
+    int[] temp = Arrays.copyOf(aj, aj.length);
 
 
     for (int i = 0; i < aj.length ; i++) {
