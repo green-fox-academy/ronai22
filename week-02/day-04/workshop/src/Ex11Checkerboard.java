@@ -7,15 +7,13 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ex11Checkerboard {
   public static void mainDraw(Graphics graphics) {
     // Fill the canvas with a checkerboard pattern.
-    int squareSize = WIDTH / 10;
+    int squareSize = WIDTH / 8;
     checkerBoardFiller(squareSize, graphics);
-
-
   }
 
   private static void checkerBoardFiller(int squareSize, Graphics graphics) {
-    for (int rowIndex = 0; rowIndex <10 ; rowIndex++) {
-      for (int columnIndex = 0; columnIndex <10 ; columnIndex++) {
+    for (int rowIndex = 0; rowIndex <8 ; rowIndex++) {
+      for (int columnIndex = 0; columnIndex <8 ; columnIndex++) {
        if (rowIndex % 2 == 0) {
          if (columnIndex % 2 == 0) {
            graphics.setColor(Color.WHITE);

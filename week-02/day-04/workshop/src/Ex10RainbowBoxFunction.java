@@ -51,8 +51,8 @@ public class Ex10RainbowBoxFunction {
 
 
   // Don't touch the code below
-  static int WIDTH = 600;
-  static int HEIGHT = 600;
+  static int WIDTH = 800;
+  static int HEIGHT = 800;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Ex10RainbowBoxFunction");
