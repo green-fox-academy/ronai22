@@ -7,17 +7,18 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Ex02LinePlayQuarter {
   public static void mainDraw(Graphics graphics) {
-    int stepsSize = 10;
-    int canvasDivide = 2;
+    int stepsSize = 5;
+    int canvasDivide = 4;
     patternDrawer(stepsSize, canvasDivide, graphics);
   }
 
   private static void patternDrawer(int stepSize, int canvasDivide, Graphics graphics) {
     for (int canvasX = 0; canvasX < canvasDivide ; canvasX++) {
       for (int canvasY = 0; canvasY < canvasDivide ; canvasY++) {
-        for (int i = 1; i < WIDTH / stepSize / canvasDivide ; i++) {
+        for (int i = 0; i <= WIDTH / stepSize / canvasDivide ; i++) {
           lineDrawer(i, canvasX, canvasY, stepSize, canvasDivide, graphics);
         }
+
       }
     }
   }
@@ -31,7 +32,15 @@ public class Ex02LinePlayQuarter {
             HEIGHT / canvasDivide +  canvasX * (HEIGHT / canvasDivide),
             canvasY * HEIGHT / canvasDivide + i * stepSize
     );
-    
+
+    graphics.setColor(Color.RED);
+    graphics.drawLine(
+            canvasX * HEIGHT / canvasDivide,
+            canvasY * HEIGHT / canvasDivide + i * stepSize,
+            canvasX * HEIGHT / canvasDivide + i * stepSize,
+            HEIGHT / canvasDivide +  canvasY * (HEIGHT / canvasDivide)
+
+     );
   }
 
   // Don't touch the code below
