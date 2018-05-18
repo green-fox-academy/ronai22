@@ -1,7 +1,6 @@
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
@@ -18,7 +17,6 @@ public class Ex02LinePlayQuarter {
         for (int i = 0; i <= WIDTH / stepSize / canvasDivide ; i++) {
           lineDrawer(i, canvasX, canvasY, stepSize, canvasDivide, graphics);
         }
-
       }
     }
   }
