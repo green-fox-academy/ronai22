@@ -8,6 +8,7 @@ public class Ex06CenteredSquare {
 
   public static void mainDraw(Graphics graphics) {
     // Draw a green 10x10 square to the canvas' center.
+    
     graphics.setColor(Color.GREEN);
     graphics.fillRect((WIDTH / 2) - 10, (HEIGHT / 2) - 10, 10, 10);
   }

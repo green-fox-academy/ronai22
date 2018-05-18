@@ -25,10 +25,10 @@ public class Ex12FunctionToCenter {
 
   private static void drawLinesToCenter(Graphics graphics) {
       for (int columnStep = 0; columnStep <= 20 ; columnStep++) {
-        graphics.drawLine(0, columnStep * 20, WIDTH/2, HEIGHT / 2);
-        graphics.drawLine(WIDTH, columnStep * 20, WIDTH/2, HEIGHT / 2);
-        graphics.drawLine(columnStep * 20,0, WIDTH/2, HEIGHT / 2);
-        graphics.drawLine(columnStep * 20, WIDTH, WIDTH/2, HEIGHT / 2);
+        graphics.drawLine(0, columnStep * 20, WIDTH/2, HEIGHT/2);
+        graphics.drawLine(WIDTH, columnStep * 20, WIDTH/2, HEIGHT/2);
+        graphics.drawLine(columnStep * 20,0, WIDTH/2, HEIGHT/2);
+        graphics.drawLine(columnStep * 20, WIDTH, WIDTH/2, HEIGHT/2);
       }
 
   }
