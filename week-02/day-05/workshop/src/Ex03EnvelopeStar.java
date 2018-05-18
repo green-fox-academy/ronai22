@@ -16,7 +16,6 @@ public class Ex03EnvelopeStar {
     for (int i = 1; i < WIDTH / stepSize / canvasDivide ; i++) {
       lineDrawer(i, stepSize, canvasDivide, graphics);
     }
-
   }
 
   private static void lineDrawer(int i, int stepSize, int canvasDivide, Graphics graphics) {
@@ -41,9 +40,6 @@ public class Ex03EnvelopeStar {
             WIDTH / canvasDivide,
             WIDTH / canvasDivide,
             WIDTH - (i * stepSize));
-
-
-
   }
 
   // Don't touch the code below

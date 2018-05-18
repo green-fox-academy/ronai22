@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ex02LinePlayQuarter {
   public static void mainDraw(Graphics graphics) {
     int stepsSize = 5;
-    int canvasDivide = 4;
+    int canvasDivide = 8;
     patternDrawer(stepsSize, canvasDivide, graphics);
   }
 
