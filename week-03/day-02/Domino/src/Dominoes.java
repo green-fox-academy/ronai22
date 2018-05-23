@@ -10,8 +10,8 @@ public class Dominoes {
     List<Domino> sortedDominoes = new ArrayList<>();
     sortedDominoes.add(dominoes.get(0));
 
-    for (int i = 0; i < dominoes.size() ; i++) {
-      for (int j = 0; j < dominoes.size() ; j++) {
+    for (int i = 0; i < (dominoes.size() - 1); i++) {
+      for (int j = 0; j < dominoes.size(); j++) {
         if (sortedDominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0]){
           sortedDominoes.add(dominoes.get(j));
         }
