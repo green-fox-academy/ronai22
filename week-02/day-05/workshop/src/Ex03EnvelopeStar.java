@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Ex03EnvelopeStar {
   public static void mainDraw(Graphics graphics) {
-    int stepsSize = 10;
+    int stepsSize = 40;
     int canvasDivide = 2;
     patternDrawer(stepsSize, canvasDivide, graphics);
   }
@@ -43,8 +43,8 @@ public class Ex03EnvelopeStar {
   }
 
   // Don't touch the code below
-  static int WIDTH = 400;
-  static int HEIGHT = 400;
+  static int WIDTH = 800;
+  static int HEIGHT = 800;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Ex03EnvelopeStar");

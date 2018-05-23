@@ -7,10 +7,9 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ex02LinePlayQuarter {
   public static void mainDraw(Graphics graphics) {
     int stepsSize = 5;
-    int canvasDivide = 8;
+    int canvasDivide = 4;
     patternDrawer(stepsSize, canvasDivide, graphics);
   }
-
   private static void patternDrawer(int stepSize, int canvasDivide, Graphics graphics) {
     for (int canvasX = 0; canvasX < canvasDivide ; canvasX++) {
       for (int canvasY = 0; canvasY < canvasDivide ; canvasY++) {
@@ -42,8 +41,8 @@ public class Ex02LinePlayQuarter {
   }
 
   // Don't touch the code below
-  static int WIDTH = 400;
-  static int HEIGHT = 400;
+  static int WIDTH = 800;
+  static int HEIGHT = 800;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Ex02LinePlayQuarter");

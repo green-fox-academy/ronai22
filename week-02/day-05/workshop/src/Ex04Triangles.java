@@ -6,8 +6,9 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Ex04Triangles {
   public static void mainDraw(Graphics graphics) {
+    int trianglePyramidSize = 19;
 
-    for (int lineCount = 0; lineCount < 10 ; lineCount++) {
+    for (int lineCount = 0; lineCount < trianglePyramidSize ; lineCount++) {
       for (int i = -lineCount ; i <=  lineCount ; i ++) {
         if (lineCount % 2 == 0 && i % 2 == 0 ) {
             triangleDraw(lineCount, i , graphics);
@@ -24,7 +25,7 @@ public class Ex04Triangles {
     int xpoints[] = {200 +  i * 10, 190 + i * 10, 210 + i * 10};
     int ypoints[] = {lineCount * 17, lineCount * 17 + 17, lineCount * 17 + 17};
     int npoints = 3;
-    graphics.setColor(Color.RED);
+    graphics.setColor(Color.BLACK);
     graphics.drawPolygon(xpoints, ypoints, npoints);
   }
 
