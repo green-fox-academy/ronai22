@@ -35,6 +35,7 @@ public class DiceSet {
 
   public static void main(String[] args) {
     DiceSet diceSet = new DiceSet();
+    diceSet.reroll();
     int howManyRolls = 0;
     for (int j = 0; j < 6;) {
 
