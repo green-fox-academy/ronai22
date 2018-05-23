@@ -13,7 +13,11 @@ public class AnimalLife {
     for (int i = 0; i <10 ; i++) {
       tiger.play();
     }
+    Farm farm = new Farm();
 
-    System.out.println(tiger);
+    farm.breed();
+    farm.slaughter();
+
+    System.out.println();
   }
 }
