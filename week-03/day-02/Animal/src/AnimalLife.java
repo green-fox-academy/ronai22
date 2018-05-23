@@ -10,7 +10,9 @@ public class AnimalLife {
       tiger.eat();
     }
 
-    tiger.play();
+    for (int i = 0; i <10 ; i++) {
+      tiger.play();
+    }
 
     System.out.println(tiger);
   }
