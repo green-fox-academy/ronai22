@@ -4,8 +4,6 @@ public class SumDigit {
     int number = 1829;
     int sumNumberDigit = numberDigitSum(number);
     System.out.println(sumNumberDigit);
-
-
   }
 
   private static int numberDigitSum(int number) {
