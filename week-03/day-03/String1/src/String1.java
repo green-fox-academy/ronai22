@@ -1,7 +1,7 @@
 public class String1 {
   public static void main(String[] args) {
 
-    String sentence = "We are the x generation, we will have to learn coding in the primary school xxxxxxxeah";
+    String sentence = "We are the x generation, we need to learn coding in the primary school, xxxxxxxeah";
     System.out.println(xChanger(sentence));
 
   }
