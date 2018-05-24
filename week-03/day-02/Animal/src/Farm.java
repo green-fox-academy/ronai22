@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Farm {
@@ -13,17 +12,9 @@ public class Farm {
   }
 
   public List slaughter () {
-    int[] hungerArray = new int[animals.size()];
-    int hungerIndex = 1000;
-    for (int i = 0; i <animals.size() ; i++) {
-      hungerArray[i] = animals.get(i).hunger;
-      if (hungerArray[i] < hungerIndex){
-        hungerIndex = hungerArray[i];
-      }
-    }
-
+    int hungerIndex = animals.get(0).hunger;
     int fatAnimalIndex = 0;
-    for (int i = 1; i >= 0 ; i--) {
+    for (int i = 0; i < animals.size() ; i--) {
       if (animals.get(i).hunger < hungerIndex) {
         hungerIndex = animals.get(i).hunger;
         fatAnimalIndex = i;
