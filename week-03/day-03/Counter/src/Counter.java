@@ -1,9 +1,9 @@
 public class Counter {
-  
+
   public static void main(String[] args) {
 
-    int n = 100;
-    countDownFromN(n);
+    int limit = 100;
+    countDownFromN(limit);
   }
 
   private static int countDownFromN(int limit) {
@@ -11,7 +11,7 @@ public class Counter {
       return 0;
     } else  {
       System.out.println(limit);
-      return countDownFromN(limit -1);
+      return countDownFromN(limit - 1);
     }
   }
 }
