@@ -1,16 +1,23 @@
 public class String1 {
   public static void main(String[] args) {
 
-    String sentence = "We are the x generation, we need to learn coding in the primary school, xxxxxxxeah";
-    System.out.println(xChanger(sentence));
-
+    String sentence = "Generation x has to xell more to xellow xards";
+    char from = 'x';
+    char to = 'y';
+    System.out.println(xChanger(sentence, from, to));
   }
 
-  private static String xChanger(String sentence) {
-    if (!sentence.contains("x")) {
-      return sentence;
+  private static String xChanger(String s, char from, char to) {
+    char first;
+    if (s.length() < 1) {
+      return s;
     } else {
-      return xChanger(sentence.replace("x", "y"));
+      if (from == s.charAt(0)) {
+        first = to;
+      } else {
+        first = s.charAt(0);
+      }
+      return first + xChanger(s.substring(1), from, to);
     }
   }
 }
