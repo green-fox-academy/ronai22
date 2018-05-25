@@ -11,7 +11,6 @@ public class FactorialDrawing1 {
     int startpointX = 0;
     int startpointY = 0;
     drawSquare(n, WIDTH, startpointX, startpointY, graphics);
-
   }
 
   private static void drawSquare(int n, int width, int startpointX, int startpointY, Graphics graphics) {
@@ -29,9 +28,7 @@ public class FactorialDrawing1 {
 
       graphics.drawRect(startpointX + width / 3, startpointY + 2 * width / 3, width / 3, width / 3 );
       drawSquare(n-1, width/3, startpointX + width / 3, startpointY + 2 * width / 3, graphics);
-
     }
-
   }
 
   //    Don't touch the code below
