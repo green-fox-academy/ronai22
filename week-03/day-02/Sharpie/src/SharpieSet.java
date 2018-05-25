@@ -20,7 +20,7 @@ public class SharpieSet {
   }
 
   public List removeTrash () {
-    for (int i = sharpies.size() -1 ; i >=0; i--) {
+    for (int i = 0 ; i < sharpies.size(); i++) {
       if (sharpies.get(i).inkAmount < 0) {
         sharpies.remove(i);
       }

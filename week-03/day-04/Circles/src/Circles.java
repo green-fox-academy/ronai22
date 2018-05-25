@@ -8,24 +8,37 @@ public class Circles {
 
   public static void mainDraw(Graphics graphics){
     int n = 5;
-    int startpointX = 0;
-    int startpointY = 0;
-    //drawCircle(n, WIDTH, startpointX, startpointY, graphics);
+    int width = 300;
 
+    double triangleSide = (300 * 0.86602540378);
+    double triangleHeight = triangleSide * (Math.sqrt(3) / 2);
 
+    int startpoint1X = 150;
+    int startpoint1Y = 0;
+
+    int startpoint2X = 20;
+    int startpoint2Y = (int)triangleHeight;
+
+    int startpoint3X = (int)triangleHeight + 57 ;
+    int startpoint3Y = (int)triangleHeight;
 
     graphics.drawOval(0, 0, 600, 600);
-    graphics.drawOval(150, 0, 300, 300);
-    graphics.drawOval(, 300 , 300, 300);
+    drawCircle(n, width, startpoint1X, startpoint1Y, startpoint2X, startpoint2Y, startpoint3X, startpoint3Y, graphics);
 
   }
 
-  private static void drawCircle(int n, int width, int startpointX, int startpointY, Graphics graphics) {
+  private static void drawCircle(int n, int width, int startpoint1X, int startpoint1Y, int startpoint2X, int startpoint2Y, int startpoint3X, int startpoint3Y, Graphics graphics) {
     if (n == 0) {
 
     } else {
 
-      graphics.drawOval(200, 200, 100, 100);
+      graphics.drawOval(startpoint1X,   startpoint1Y,  width,  width);
+      drawCircle(n - 1, width / 2, startpoint1X + width / 4, startpoint1Y , startpoint2X + width / 20, startpoint2Y + startpoint2Y / 4, startpoint3X + width / 4, startpoint3Y, graphics);
+      graphics.drawOval(startpoint2X, startpoint2Y , width, width);
+      drawCircle(n - 1, width / 2, startpoint1X + width / 4, startpoint1Y, startpoint2X + width / 20, startpoint2Y + startpoint2Y / 4, startpoint3X + width / 4, startpoint3Y, graphics);
+      graphics.drawOval(startpoint3X , startpoint3Y , width, width);
+      drawCircle(n - 1, width / 2, startpoint1X + width / 4, startpoint1Y, startpoint2X + width / 20, startpoint2Y + startpoint2Y / 4, startpoint3X + width / 4, startpoint3Y, graphics);
+
     }
   }
 

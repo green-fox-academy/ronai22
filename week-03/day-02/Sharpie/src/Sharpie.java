@@ -26,15 +26,16 @@ public class Sharpie {
     sharpieSet.sharpies.add(sharpie3);
     sharpieSet.sharpies.add(sharpie4);
 
-    for (int i = 0; i <101 ; i++) {
-      sharpieSet.sharpies.get(0).use();
+    for (int i = 0; i <100 ; i++) {
+      sharpieSet.sharpies.get(2).use();
     }
 
-    for (int i = 0; i <101 ; i++) {
+    for (int i = 0; i <30 ; i++) {
       sharpieSet.sharpies.get(1).use();
     }
 
     sharpieSet.removeTrash();
+
     System.out.println(sharpieSet.countUsable());
 
   }
