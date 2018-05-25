@@ -7,15 +7,28 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class FactorialDrawing1 {
 
   public static void mainDraw(Graphics graphics){
-    int smallestSquare = WIDTH;
-    drawSquare(smallestSquare, graphics);
+    int n = 5;
+    int startpointX = 0;
+    int startpointY = 0;
+    drawSquare(n, WIDTH, startpointX, startpointY, graphics);
 
   }
 
-  private static void drawSquare(int smallestSquare, Graphics graphics) {
-    if (smallestSquare < 10) {
+  private static void drawSquare(int n, int width, int startpointX, int startpointY, Graphics graphics) {
+    if (n == 0) {
+
     } else {
-      graphics.drawRect(smallestSquare/3, 0, smallestSquare/3, smallestSquare/3);
+      graphics.drawRect(startpointX + width/3, startpointY, width / 3, width / 3);
+      drawSquare(n-1, width/3, startpointX + width / 3, startpointY, graphics);
+
+      graphics.drawRect(startpointX + 2 * width / 3,  startpointY + width / 3, width / 3, width / 3 );
+      drawSquare(n-1, width/3, startpointX, startpointY + width / 3, graphics);
+
+      graphics.drawRect(startpointX, startpointY + width / 3, width / 3, width / 3 );
+      drawSquare(n-1, width/3, startpointX + 2 * width / 3, startpointY + width / 3, graphics);
+
+      graphics.drawRect(startpointX + width / 3, startpointY + 2 * width / 3, width / 3, width / 3 );
+      drawSquare(n-1, width/3, startpointX + width / 3, startpointY + 2 * width / 3, graphics);
 
     }
 
