@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Ship {
+
+    List<Pirate> pirateShip;
+
+  public Ship() {
+    pirateShip = new ArrayList<>();
+  }
+
+  public Ship fillShip(Ship ship) {
+    Pirate captain = new Pirate();
+    ship.pirateShip.add(captain);
+    Random random  = new Random();
+    int pirateNumber = 25 + random.nextInt(76);
+    for (int i = 0; i < pirateNumber; i++) {
+      Pirate pirate = new Pirate();
+      ship.pirateShip.add(pirate);
+    }
+    if (pirateShip.get(0).healthIndex == 0) {
+      System.out.println("Captain on this ship is dead, and there are " + (pirateShip.size() - 1) + " pirates without a single fuck given");
+    } else if (pirateShip.get(0).healthIndex == 1) {
+      System.out.println("Captain is passed out, and there are " + (pirateShip.size() - 1) + " more pirates having some rum on this ship");
+    } else if (pirateShip.get(0).drunkIndex == 0){
+      System.out.println("Captain is alive, and completely sober" + (pirateShip.size() - 1) + " more pirates are ready to drink, of fight");
+    } else if (pirateShip.get(0).drunkIndex == 1) {
+      System.out.println("Captain is alive, and a little bit drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, of fight");
+    } else if (pirateShip.get(0).drunkIndex == 2) {
+      System.out.println("Captain is alive, and a bit drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, of fight");
+    } else if (pirateShip.get(0).drunkIndex == 3) {
+      System.out.println("Captain is alive, and drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, of fight");
+    } else if (pirateShip.get(0).drunkIndex == 4) {
+      System.out.println("Captain is alive, and very drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, of fight");
+    }
+    return ship;
+  }
+
+  public boolean battle (Ship ship) {
+
+    int scoreThis = 0;
+    int scoreOther = 0;
+
+    if (this.pirateShip.get(0).healthIndex == 0) {
+      scoreThis = this.pirateShip.size() - this.pirateShip.get(0).drunkIndex;
+    } else {
+      scoreThis = this.pirateShip.size();
+    }
+
+    if (pirateShip.get(0).healthIndex == 0) {
+      scoreOther = pirateShip.size() - pirateShip.get(0).drunkIndex;
+    } else {
+      scoreOther = pirateShip.size();
+    }
+
+    if (scoreThis > scoreOther) {
+      return true;
+    }
+    return false;
+  }
+}

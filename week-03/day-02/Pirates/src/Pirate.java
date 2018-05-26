@@ -8,6 +8,7 @@ public class Pirate {
   int pirateId;
   int drunkIndex;
   int healthIndex;
+  String pirateGrade;
 
   public Pirate() {
     pirateId = idCounter++;
@@ -50,7 +51,7 @@ public class Pirate {
       }
     }
   }
-  
+
   public void parrot (String string) {
     System.out.println(string);
   }
