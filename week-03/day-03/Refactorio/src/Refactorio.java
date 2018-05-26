@@ -7,8 +7,7 @@ public class Refactorio {
   private static int refactorio(int n) {
     if (n == 0){
       return 1;
-    } else {
-      return n * refactorio(n - 1);
     }
+    return n * refactorio(n - 1);
   }
 }
