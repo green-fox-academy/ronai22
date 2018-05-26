@@ -10,8 +10,20 @@ public class CreateBlogPost {
                     "take his picture outside one of IBM’s New York City offices, he told me that he wasn’t really into the whole \n" +
                     " organizer profile thing.", "2017.03.28.");
 
+    Blog blogs = new Blog();
+
+    blogs.blogPostAdder(blogPost1);
+    blogs.blogPostAdder(blogPost2);
+    blogs.blogPostAdder(blogPost3);
+
+    blogs.blogPostDeleter(1);
+    blogs.blogPostUpdater(0, blogPost3);
+
     System.out.println(blogPost1);
     System.out.println(blogPost2);
     System.out.println(blogPost3);
+
+
+
   }
 }

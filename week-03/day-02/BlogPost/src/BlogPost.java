@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class BlogPost {
 
   String authorName;
@@ -18,6 +16,5 @@ public class BlogPost {
     this.title = title;
     this.text = text;
     this.date = date;
-
   }
 }
