@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Pirate {
 
@@ -48,5 +49,9 @@ public class Pirate {
         this.healthIndex =1;
       }
     }
+  }
+  
+  public void parrot (String string) {
+    System.out.println(string);
   }
 }
