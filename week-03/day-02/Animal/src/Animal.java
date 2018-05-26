@@ -4,20 +4,20 @@ public class Animal {
   int thirst;
 
   public Animal() {
-    this.hunger = 50;
-    this.thirst = 50;
+    hunger = 50;
+    thirst = 50;
   }
 
   public void eat () {
-    this.hunger--;
+    hunger--;
   }
   public void drink () {
-    this.thirst--;
+    thirst--;
   }
 
   public void play () {
-    this.hunger++;
-    this.thirst++;
+    hunger++;
+    thirst++;
   }
 
   @Override
