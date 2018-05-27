@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class Pirate {
 
@@ -8,19 +7,24 @@ public class Pirate {
   int pirateId;
   int drunkIndex;
   int healthIndex;
-  String pirateGrade;
 
   public Pirate() {
+    Random random = new Random();
     pirateId = idCounter++;
-    drunkIndex = 0;
+    drunkIndex = random.nextInt(5);
     healthIndex = 2;
   }
 
   public void drinkSomeRum(){
     if (healthIndex == 0) {
       System.out.println("He is dead.");
+    } else if (healthIndex == 1) {
+      System.out.println("He passed out, and cannot drink rum");
     } else {
       drunkIndex = drunkIndex++;
+    }
+    if (drunkIndex < 4) {
+      healthIndex = 1;
     }
   }
 
