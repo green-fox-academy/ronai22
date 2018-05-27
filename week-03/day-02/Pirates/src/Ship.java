@@ -14,7 +14,7 @@ public class Ship {
     Pirate captain = new Pirate();
     pirateShip.add(captain);
     Random random = new Random();
-    int pirateNumber = 25 + random.nextInt(76);
+    int pirateNumber = 10 + random.nextInt(26);
     for (int i = 0; i < pirateNumber; i++) {
       Pirate pirate = new Pirate();
       pirateShip.add(pirate);
@@ -24,15 +24,15 @@ public class Ship {
     } else if (pirateShip.get(0).healthIndex == 1) {
       System.out.println("Captain is passed out, and there are " + (pirateShip.size() - 1) + " more pirates having some rum on this ship");
     } else if (pirateShip.get(0).drunkIndex == 0) {
-      System.out.println("Captain is alive, and completely sober" + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
+      System.out.println("Captain is alive, and completely sober,  " + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
     } else if (pirateShip.get(0).drunkIndex == 1) {
-      System.out.println("Captain is alive, and a little bit drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
+      System.out.println("Captain is alive, and a little bit drunk, " + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
     } else if (pirateShip.get(0).drunkIndex == 2) {
-      System.out.println("Captain is alive, and a bit drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
+      System.out.println("Captain is alive, and a bit drunk, " + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
     } else if (pirateShip.get(0).drunkIndex == 3) {
-      System.out.println("Captain is alive, and drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
+      System.out.println("Captain is alive, and drunk, " + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
     } else if (pirateShip.get(0).drunkIndex == 4) {
-      System.out.println("Captain is alive, and very drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
+      System.out.println("Captain is alive, and very drunk, " + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
     }
     return pirateShip;
   }

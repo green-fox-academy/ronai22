@@ -2,15 +2,11 @@ import java.util.Random;
 
 public class Pirate {
 
-  static int idCounter = 1;
-
-  int pirateId;
   int drunkIndex;
   int healthIndex;
 
   public Pirate() {
     Random random = new Random();
-    pirateId = idCounter++;
     drunkIndex = random.nextInt(4);
     healthIndex = 2;
   }
@@ -19,7 +15,7 @@ public class Pirate {
     if (healthIndex == 0) {
     } else if (healthIndex == 1) {
     } else {
-      drunkIndex = drunkIndex++;
+      drunkIndex++;
     }
     if (drunkIndex < 4) {
       healthIndex = 1;
@@ -49,8 +45,12 @@ public class Pirate {
         this.healthIndex = 0;
       } else {
         pirate.healthIndex = 1;
-        this.healthIndex =1;
+        this.healthIndex = 1;
       }
+    } else if (pirate.healthIndex == 1) {
+      System.out.println("He is passed out.");
+    } else {
+      System.out.println("He is dead.");
     }
   }
 

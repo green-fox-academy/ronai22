@@ -8,7 +8,6 @@ public class BattleApp {
     pirateShip2.fillShip();
 
     System.out.println(pirateShip1.battle(pirateShip2));
-
-
+    
   }
 }
