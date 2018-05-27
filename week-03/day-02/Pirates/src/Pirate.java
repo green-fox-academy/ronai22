@@ -11,15 +11,13 @@ public class Pirate {
   public Pirate() {
     Random random = new Random();
     pirateId = idCounter++;
-    drunkIndex = random.nextInt(5);
+    drunkIndex = random.nextInt(4);
     healthIndex = 2;
   }
 
   public void drinkSomeRum(){
     if (healthIndex == 0) {
-      System.out.println("He is dead.");
     } else if (healthIndex == 1) {
-      System.out.println("He passed out, and cannot drink rum");
     } else {
       drunkIndex = drunkIndex++;
     }

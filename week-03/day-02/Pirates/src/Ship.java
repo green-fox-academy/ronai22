@@ -10,14 +10,14 @@ public class Ship {
     pirateShip = new ArrayList<>();
   }
 
-  public Ship fillShip(Ship ship) {
+  public List<Pirate> fillShip() {
     Pirate captain = new Pirate();
-    ship.pirateShip.add(captain);
+    pirateShip.add(captain);
     Random random = new Random();
     int pirateNumber = 25 + random.nextInt(76);
     for (int i = 0; i < pirateNumber; i++) {
       Pirate pirate = new Pirate();
-      ship.pirateShip.add(pirate);
+      pirateShip.add(pirate);
     }
     if (pirateShip.get(0).healthIndex == 0) {
       System.out.println("Captain on this ship is dead, and there are " + (pirateShip.size() - 1) + " pirates without a single fuck given");
@@ -34,7 +34,7 @@ public class Ship {
     } else if (pirateShip.get(0).drunkIndex == 4) {
       System.out.println("Captain is alive, and very drunk" + (pirateShip.size() - 1) + " more pirates are ready to drink, or fight");
     }
-    return ship;
+    return pirateShip;
   }
 
   public boolean battle(Ship ship) {
@@ -42,22 +42,22 @@ public class Ship {
     int scoreThis = 0;
     int scoreOther = 0;
 
-    if (this.pirateShip.get(0).healthIndex == 0) {
+    if (this.pirateShip.get(0).healthIndex == 2) {
       scoreThis = this.pirateShip.size() - this.pirateShip.get(0).drunkIndex;
     } else {
       scoreThis = this.pirateShip.size();
     }
 
-    if (pirateShip.get(0).healthIndex == 0) {
-      scoreOther = pirateShip.size() - pirateShip.get(0).drunkIndex;
+    if (ship.pirateShip.get(0).healthIndex == 2) {
+      scoreOther = ship.pirateShip.size() - ship.pirateShip.get(0).drunkIndex;
     } else {
-      scoreOther = pirateShip.size();
+      scoreOther = ship.pirateShip.size();
     }
 
     if (scoreThis > scoreOther) {
-      int dieUntil = random.nextInt(pirateShip.size());
+      int dieUntil = random.nextInt(ship.pirateShip.size());
       for (int i = dieUntil - 1; i > 0; i--) {
-        pirateShip.get(i).die();
+        ship.pirateShip.get(i).die();
       }
       for (int i = 0; i < random.nextInt(4) ; i++) {
         for (int j = 0; j < this.pirateShip.size() ; j++) {
@@ -71,8 +71,8 @@ public class Ship {
         this.pirateShip.get(i).die();
       }
       for (int i = 0; i < random.nextInt(4) ; i++) {
-        for (int j = 0; j < pirateShip.size() ; j++) {
-          pirateShip.get(i).drinkSomeRum();
+        for (int j = 0; j < ship.pirateShip.size() ; j++) {
+          ship.pirateShip.get(i).drinkSomeRum();
         }
       }
     }
