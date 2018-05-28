@@ -39,8 +39,8 @@ public class Ship {
 
   public boolean battle(Ship ship) {
     Random random = new Random();
-    int scoreThis = 0;
-    int scoreOther = 0;
+    int scoreThis;
+    int scoreOther;
 
     if (this.pirateShip.get(0).healthIndex == 2) {
       scoreThis = this.pirateShip.size() - this.pirateShip.get(0).drunkIndex;
@@ -56,7 +56,7 @@ public class Ship {
 
     if (scoreThis > scoreOther) {
       int dieUntil = random.nextInt(ship.pirateShip.size());
-      for (int i = dieUntil - 1; i > 0; i--) {
+      for (int i = ship.pirateShip.size() - 1; i >= ship.pirateShip.size() - dieUntil; i--) {
         ship.pirateShip.get(i).die();
       }
       for (int i = 0; i < random.nextInt(4) ; i++) {
@@ -67,7 +67,7 @@ public class Ship {
       return true;
     } else {
       int dieUntil = random.nextInt(this.pirateShip.size());
-      for (int i = dieUntil - 1; i > 0; i--) {
+      for (int i = this.pirateShip.size() - 1; i >= this.pirateShip.size() - dieUntil; i--) {
         this.pirateShip.get(i).die();
       }
       for (int i = 0; i < random.nextInt(4) ; i++) {
