@@ -5,5 +5,6 @@ public class F35 extends AirCraft {
     this.setCurrentAmmo(0);
     this.setMaxAmmo(12);
     this.setBaseDamage(50);
+    this.setPriority(true);
   }
 }
