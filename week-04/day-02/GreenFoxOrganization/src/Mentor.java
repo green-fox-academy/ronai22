@@ -3,7 +3,7 @@ public class Mentor extends Person {
   String level;
 
   public Mentor() {
-    this("Jane Doe", 30, "female", "intermediate");
+    this.level = "intermediate";
   }
 
   public Mentor(String name, int age, String gender, String level) {
