@@ -3,7 +3,7 @@ public class Sponsor extends Person {
   String company;
   int hiredStudents;
 
-  public Sponsor(String company, int hiredStudents) {
+  public Sponsor() {
     this.company = "Google";
     this.hiredStudents = 0;
   }
