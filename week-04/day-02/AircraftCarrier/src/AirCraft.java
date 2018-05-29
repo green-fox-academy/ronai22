@@ -48,9 +48,9 @@ public class AirCraft {
 
   public int refill(int allAmmoAmount) {
     if (maxAmmo > allAmmoAmount) {
-      currentAmmo = maxAmmo;
-    } else {
       currentAmmo = allAmmoAmount;
+    } else {
+      currentAmmo = maxAmmo;
     }
     return allAmmoAmount - currentAmmo;
   }

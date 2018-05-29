@@ -12,7 +12,7 @@ public class Fight {
     AirCraft F16two = new F16();
     AirCraft F16three = new F16();
 
-    Carrier carrier1 = new Carrier(2000, 5000);
+    Carrier carrier1 = new Carrier(1500, 6000);
     Carrier carrier2 = new Carrier(2000, 5000);
 
     carrier1.addAircraft(F16one);
@@ -23,8 +23,12 @@ public class Fight {
     carrier2.addAircraft(F35three);
     carrier2.addAircraft(F16three);
 
-    carrier1.fight(carrier2);
+    carrier1.fill();
+    carrier2.fill();
 
+    carrier1.fight(carrier2);
+    carrier1.getStatus();
+    carrier2.getStatus();
 
 
   }

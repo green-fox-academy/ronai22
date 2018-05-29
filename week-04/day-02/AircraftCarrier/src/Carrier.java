@@ -44,7 +44,7 @@ public class Carrier {
   public void fill() {
     int maxAmmo = 0;
     for (AirCraft airCraft : carrier) {
-      maxAmmo = maxAmmo + airCraft.getBaseDamage();
+      maxAmmo =+ airCraft.getMaxAmmo();
     }
     if (allAmmoAmount == 0) {
       System.out.println("Ammo is out of stock, this carrier is fucked");
@@ -65,25 +65,25 @@ public class Carrier {
   }
 
   public void fight(Carrier carrier) {
-    int damageMade = 0;
-    for (AirCraft airCraft : (List<AirCraft>)carrier ) {
-      airCraft.setCurrentAmmo(0);
+    int damageMade;
+    for (AirCraft airCraft : this.carrier) {
+      damageMade =+ airCraft.fight();
+      carrier.healthPoint = carrier.healthPoint - damageMade;
     }
     for (AirCraft airCraft : this.carrier) {
-      damageMade = damageMade + airCraft.getCurrentAmmo() * airCraft.getBaseDamage();
-      carrier.healthPoint = carrier.healthPoint - damageMade;
+      airCraft.setCurrentAmmo(0);
     }
   }
 
-  public void getStatus(Carrier carrier) {
+  public void getStatus() {
     int totalDamage = 0;
-    for (AirCraft airCraft : (List<AirCraft>)carrier) {
+    for (AirCraft airCraft : this.getCarrier()) {
       totalDamage = totalDamage + airCraft.getCurrentAmmo() * airCraft.getBaseDamage();
     }
-    System.out.println("HP: " + carrier.healthPoint + ", Aircraft count: " + carrier.getCarrier().size() + ", Ammo Storage: " +
-    carrier.allAmmoAmount + ", Total damage: ");
+    System.out.println("HP: " + this.healthPoint + ", Aircraft count: " + this.getCarrier().size() + ", Ammo Storage: " +
+    this.allAmmoAmount + ", Total damage: ");
     System.out.println("Aircrafts: ");
-    for (AirCraft airCraft : (List<AirCraft>)carrier) {
+    for (AirCraft airCraft : this.getCarrier()) {
       airCraft.getStatus();
     }
   }
