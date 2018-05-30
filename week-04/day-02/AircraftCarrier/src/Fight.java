@@ -26,10 +26,16 @@ public class Fight {
     carrier1.fill();
     carrier2.fill();
 
-    carrier1.fight(carrier2);
     carrier1.getStatus();
     carrier2.getStatus();
 
+    carrier1.fight(carrier2);
+    carrier2.fight(carrier1);
 
+    carrier1.fill();
+    carrier2.fill();
+
+    carrier1.getStatus();
+    carrier2.getStatus();
   }
 }

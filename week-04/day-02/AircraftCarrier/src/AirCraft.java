@@ -52,12 +52,13 @@ public class AirCraft {
     } else {
       currentAmmo = maxAmmo;
     }
-    return allAmmoAmount - currentAmmo;
+    allAmmoAmount = allAmmoAmount - currentAmmo;
+    return allAmmoAmount;
   }
 
   public int fight() {
     int damage = this.currentAmmo * this.baseDamage;
-    this.currentAmmo = 0;
+    setCurrentAmmo(0);
     return damage;
   }
 
