@@ -44,5 +44,8 @@ public class OrganizationApp {
     awesome.addMentor(gandhi);
     awesome.info();
 
+    Student jack;
+    jack = john.clone();
+    System.out.println(jack.getPreviousOrganization());
   }
 }
