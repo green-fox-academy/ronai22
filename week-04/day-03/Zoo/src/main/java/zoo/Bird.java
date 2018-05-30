@@ -1,6 +1,6 @@
 package main.java.zoo;
 
-public class Bird extends Animal {
+public class Bird extends Animal implements Flyable  {
 
   private String breed;
   private int numberOfWings;
@@ -43,5 +43,15 @@ public class Bird extends Animal {
   @Override
   public String breed() {
     return "laying eggs.";
+  }
+
+  @Override
+  public void land() {
+    System.out.println("I can land!");
+  }
+
+  @Override
+  public void fly() {
+    System.out.println("I can fly!");
   }
 }
