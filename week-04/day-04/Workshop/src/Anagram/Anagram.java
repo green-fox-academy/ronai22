@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Anagram {
 
-  private static boolean isAnagram(String input1, String input2) {
+  public static boolean isAnagram(String input1, String input2) {
 
     if (orderedInput(input1).equals(orderedInput(input2))) {
       return true;
@@ -12,7 +12,7 @@ public class Anagram {
       return false;
   }
 
-  private static String orderedInput(String input) {
+  public static String orderedInput(String input) {
     String orderedInputString;
     char[] charArray = spaceRemover(input).toLowerCase().toCharArray();
     Arrays.sort(charArray);
@@ -20,7 +20,7 @@ public class Anagram {
     return orderedInputString;
   }
 
-  private static String spaceRemover(String input) {
+  public static String spaceRemover(String input) {
     String removedSpaces = "";
 
     for (int i = 0; i <input.length(); i++) {
@@ -29,7 +29,6 @@ public class Anagram {
         removedSpaces = removedSpaces + input.valueOf(input.charAt(i));
       }
     }
-    System.out.println(removedSpaces);
     return removedSpaces;
   }
 }
