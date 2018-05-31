@@ -13,8 +13,11 @@ public class Sum {
 
   public int sum(ArrayList<Integer> list) {
     int summary = 0;
-    for (int i = 0; i < list.size() ; i++) {
-      summary += list.get(i);
+    if (list == null) {
+    } else {
+      for (int i = 0; i < list.size() ; i++) {
+        summary += list.get(i);
+      }
     }
     return summary;
   }

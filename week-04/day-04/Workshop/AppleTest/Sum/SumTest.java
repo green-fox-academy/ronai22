@@ -19,7 +19,7 @@ public class SumTest {
   }
 
   @Test
-  public void should_returnSum_when_ArraylistInput() {
+  public void should_returnSum_when_multipleElementArraylistInput() {
 
     list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
     int expectedSum = 15;
@@ -28,4 +28,33 @@ public class SumTest {
     assertEquals(expectedSum, resultSum);
   }
 
+  @Test
+  public void should_returnSum_when_oneElementArraylistInput() {
+
+    list = new ArrayList<>(Arrays.asList(1));
+    int expectedSum = 1;
+    int resultSum = sum.sum(list);
+
+    assertEquals(expectedSum, resultSum);
+  }
+
+  @Test
+  public void should_return0_when_ArraylistEmpty() {
+
+    list = new ArrayList<>();
+    int expectedSum = 0;
+    int resultSum = sum.sum(list);
+
+    assertEquals(expectedSum, resultSum);
+  }
+
+  @Test
+  public void should_return0_when_ArraylistNull() {
+
+    list = null;
+    Integer expectedSum = 0;
+    Integer resultSum = sum.sum(list);
+
+    assertEquals(expectedSum, resultSum);
+  }
 }
