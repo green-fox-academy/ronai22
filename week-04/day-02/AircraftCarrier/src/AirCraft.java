@@ -66,5 +66,4 @@ public class AirCraft {
     return "Type" + type + ", Ammo: " + currentAmmo + ", Base Damage: " + baseDamage + ", All Damage: "
             + currentAmmo * baseDamage;
   }
-
 }
