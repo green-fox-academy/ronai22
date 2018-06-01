@@ -21,6 +21,9 @@ public class Fight {
     carrier2.addAircraft(F35three);
     carrier2.addAircraft(F16three);
 
+    carrier1.getStatus();
+    carrier2.getStatus();
+
     carrier1.fill();
     carrier2.fill();
 
@@ -29,6 +32,9 @@ public class Fight {
 
     carrier1.fight(carrier2);
     carrier2.fight(carrier1);
+
+    carrier1.getStatus();
+    carrier2.getStatus();
 
     carrier1.fill();
     carrier2.fill();

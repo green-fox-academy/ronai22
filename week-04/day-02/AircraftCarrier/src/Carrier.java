@@ -70,7 +70,7 @@ public class Carrier {
       damageMade = damageMade + airCraft.fight();
     }
     carrier.setHealthPoint(carrier.getHealthPoint() - damageMade);
-    for (AirCraft airCraft : this.carrier) {
+    for (AirCraft airCraft : this.getCarrier()) {
       airCraft.setCurrentAmmo(0);
     }
   }
