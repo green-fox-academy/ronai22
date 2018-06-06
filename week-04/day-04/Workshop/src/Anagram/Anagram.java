@@ -5,11 +5,7 @@ import java.util.Arrays;
 public class Anagram {
 
   public static boolean isAnagram(String input1, String input2) {
-
-    if (orderedInput(input1).equals(orderedInput(input2))) {
-      return true;
-    }
-      return false;
+      return (orderedInput(input1).equals(orderedInput(input2)));
   }
 
   public static String orderedInput(String input) {
