@@ -8,19 +8,12 @@ import java.util.List;
 import java.util.Map;
 
 public class Births {
-  // Create a function that
-  // - takes a filename as a parameter,
-  // - reads a csv file which rows contains data in the following format: <person name>;<birthdate in YYYY-MM-DD format>;<city name>
-  // - returns the year when the most births happend.
-
-  // You can find such a csv file in this directory: births.csv
-  // If you pass births.csv to your function, the result should be 2006.
 
   public static void main(String[] args) {
     Map<String, Integer> letterMap = hashMapTransformer(readFile());
     System.out.println(getMostBirthsYear(letterMap));
   }
-  
+
   public static String getMostBirthsYear(Map<String,Integer> letterMap) {
     int maxBirths = 0;
     for (Integer max: letterMap.values()) {
@@ -29,9 +22,9 @@ public class Births {
       }
     }
 
-    for (Object birthyears:letterMap.keySet()) {
-      if (letterMap.get(birthyears).equals(maxBirths)) {
-        return (String) birthyears;
+    for (Object birthYear:letterMap.keySet()) {
+      if (letterMap.get(birthYear).equals(maxBirths)) {
+        return (String) birthYear;
       }
     }
     return "";
@@ -49,7 +42,6 @@ public class Births {
     }
     return hashmap;
   }
-
 
   public static List<String> readFile() {
     List<String> lines = new ArrayList<>();
