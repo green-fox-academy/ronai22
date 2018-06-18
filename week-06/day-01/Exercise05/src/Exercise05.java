@@ -1,10 +1,9 @@
 import java.util.Arrays;
-import java.util.stream.Collector;
 
 public class Exercise05 {
   public static void main(String[] args) {
 
-    String text = "are you smart enough to Find UpperCase characters in this text, Kiddo?";
+    String text = "GIVING, Are you smart enough to Find UpperCase characters in this text, Kiddo?";
     System.out.println(getUppercaseCharacters(text));
   }
 
@@ -12,7 +11,7 @@ public class Exercise05 {
     String[] splittedText = text.split("");
     return Arrays.stream(splittedText)
             .map(c -> c.charAt(0))
-            .filter(c -> Character.isUpperCase(c))
+            .filter(Character::isUpperCase)
             .map(c -> Character.toString(c))
             .reduce((uppercase, letter) -> uppercase + letter)
             .get();
