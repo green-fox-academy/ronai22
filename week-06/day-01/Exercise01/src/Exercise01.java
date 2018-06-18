@@ -9,7 +9,6 @@ public class Exercise01 {
     ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14));
     List<Integer> numbersEven = getEvenNumbers(numbers);
     System.out.println(numbersEven);
-
   }
 
   private static List<Integer> getEvenNumbers(ArrayList<Integer> numbers) {
