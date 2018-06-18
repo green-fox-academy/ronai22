@@ -1,17 +1,15 @@
-import java.nio.CharBuffer;
+import java.util.Arrays;
 
 public class Exercise09 {
 
   public static void main(String[] args) {
 
-    char[] charArray = new char[] {'J', 'O', 'I', 'N', ' ', 'T', 'H', 'I', 'S'};
+    Character[] charArray = new Character[] {'J', 'O', 'I', 'N', ' ', 'T', 'H', 'I', 'S'};
     System.out.println(charJoiner(charArray));
   }
 
-  private static String charJoiner(char[] charArray) {
-    return CharBuffer.wrap(charArray)
-            .chars()
-            .mapToObj(c -> (char) c)
+  private static String charJoiner(Character[] charArray) {
+    return Arrays.stream(charArray)
             .map(c -> Character.toString(c))
             .reduce((word, letter) -> word + letter)
             .get();
