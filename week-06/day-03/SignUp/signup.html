@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign up</title>
+        <link rel="stylesheet" href="style.css"/> 
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+        <meta charset="UFT-8" />
+    </head>
+    <body>
+        <main>
+            <div>
+                <div class= "column-signup">
+                    <h1>Sign up</h1>
+                    <form action="https://newsletter-ws.herokuapp.com/register" method="POST">
+                        <div>
+                            <input type= "text" name= "name" placeholder= "Username" required/>
+                        </div>
+                        <div>
+                            <input type= "email" name= "email" placeholder="E-mail" required/>
+                        </div>
+                        <div>
+                            <input type= "password" name= "password" placeholder="Password" required/>
+                        </div>
+                        <div>
+                            <input type= "password" name= "passwordConfirmation" placeholder="Retype password" required/>
+                        </div>
+                        <div>
+                            <input type= "submit" value="Sign me up" />
+                        </div>
+                    </form>
+                </div>
+                <div class= "column-middle">
+                        <img class="center" src="or.png" alt="or">
+                </div>
+                <div class="column-social">
+                    <div class="center-social">
+                        <div>    
+                            <input type="button" value="Log in with facebook" onclick="http://facebook.com">
+                        </div> 
+                        <div>    
+                            <input type="button" value="Log in with Twitter" onclick="http://twitter.com">
+                        </div> 
+                        <div> 
+                            <input type="button" value="Log in with Google+" onclick="http://googleplus.com">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
