@@ -19,7 +19,22 @@ public class HelloWebController {
   public String greeting(Model model) {
     model.addAttribute("name", hellos[random.nextInt(hellos.length - 1)]);
     model.addAttribute("color", colors[random.nextInt(colors.length - 1)]);
+    model.addAttribute("colorRgb", "color:rgb(" +
+            random.nextInt(255) + "," +
+            random.nextInt(255) + "," +
+            random.nextInt(255) + ")");
     model.addAttribute("fontSize", 12 + random.nextInt(40));
     return "greeting";
   }
+
+  @RequestMapping("/default")
+  public String tldefault() {
+    return "default";
+  }
+
+  @RequestMapping("/hello")
+  public String hello() {
+    return "hello";
+  }
+
 }

@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
+<div th:style="${colorRgb} + ';font-size:' + ${fontSize} + 'px;'">
+    <p th:text="${name} + '!'"/>
+</div>
 <div th:style="'color: ' + ${color} + ';font-size:' + ${fontSize} + 'px;'">
     <p th:text="${name} + '!'"/>
 </div>
