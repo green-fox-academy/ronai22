@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 public class MainController {
@@ -16,11 +16,11 @@ public class MainController {
 
   public MainController() {
     accounts = new ArrayList<>();
-    accounts.add(new BankAccount("Simba", 10000, "lion"));
-    accounts.add(new BankAccount("Timon", 1000, "meerkat"));
-    accounts.add(new BankAccount("Pumbaa", 10, "warthog"));
-    accounts.add(new BankAccount("Rafiki", 5000, "mandrill"));
-    accounts.add(new BankAccount("Scar", 500, "lion"));
+    accounts.add(new BankAccount("Simba", 10000, "lion", true, true));
+    accounts.add(new BankAccount("Timon", 1000, "meerkat", false, true));
+    accounts.add(new BankAccount("Pumbaa", 10, "warthog", false, true));
+    accounts.add(new BankAccount("Rafiki", 5000, "mandrill", false, true));
+    accounts.add(new BankAccount("Scar", 500, "lion", false, true));
   }
 
   @GetMapping ("")
@@ -31,7 +31,7 @@ public class MainController {
 
   @GetMapping("/show")
   public String show(Model model) {
-    model.addAttribute("bankAccount", new BankAccount("Simba", 2000, "lion"));
+    model.addAttribute("bankAccount", new BankAccount("Simba", 2000, "lion", true, true));
     return "show";
   }
 
@@ -47,15 +47,23 @@ public class MainController {
     return "accounts";
   }
 
+  @PostMapping ("/accounts")
+  public String donationAccounts(@RequestParam String animalacc) {
+    accounts.stream().filter(animal -> animal.getName().equals(animalacc)).forEach(animal -> animal.setBalance(animal.getBalance() + 10));
+    accounts.stream().filter(a -> a.isKing()).filter(a -> a.getName().equals(animalacc)).forEach(a -> a.setBalance(a.getBalance() + 90));
+    return "redirect:/accounts";
+  }
+
   @GetMapping ("/donation")
-  public String showDonation() {
+  public String showDonation(Model model) {
+    model.addAttribute("accounts", accounts);
     return "donation";
   }
 
   @PostMapping("/donation")
-  public String donate(Model model) {
-    accounts.stream().filter(animal -> animal.getName().equals("Simba")).forEach(animal -> animal.setBalance(animal.getBalance() + 100));
-    accounts.stream().filter(animal -> !animal.getName().equals("Simba")).forEach(animal -> animal.setBalance(animal.getBalance() + 10));
+  public String donate(@RequestParam String animalacc) {
+    accounts.stream().filter(animal -> animal.getName().equals(animalacc)).forEach(animal -> animal.setBalance(animal.getBalance() + 10));
+    accounts.stream().filter(a -> a.isKing()).filter(a -> a.getName().equals(animalacc)).forEach(a -> a.setBalance(a.getBalance() + 90));
     return "redirect:/accounts";
   }
 }

@@ -19,16 +19,25 @@
                         <th>ANIMAL TYPE</th>
                         <th>IS KING?</th>
                         <th>GOOD OR BAD?</th>
+                        <th>DONATION</th>
                     </tr>
                     <tr th:each="account : ${accounts}">
                         <td th:text="${accountStat.count}"></td>
-                        <td th:text="${account.name}"></td>
+                        <td >
+                            <span th:if="${account.name == 'Simba'}" th:style="'color: red'">Simba</span>
+                            <span th:unless="${account.name == 'Simba'}" th:text="${account.name}" ></span>
+                        </td>
                         <td th:text="${account.balance}"></td>
                         <td th:text="${account.animalType}"></td>
                         <td th:if="${account.name} == 'Simba'">Yes</td>
                         <td th:unless="${account.name} == 'Simba'">No</td>
                         <td th:if="${account.name} == 'Scar'">Bad Guy</td>
                         <td th:unless="${account.name} == 'Scar'">Good One</td>
+                        <td>
+                            <form action="#" th:action="@{accounts(animalacc = ${account.name})}" method="POST" >
+                                <input type="submit" value="Donation" />
+                            </form>
+                        </td>
                     </tr>
                 </table>
             </div>
