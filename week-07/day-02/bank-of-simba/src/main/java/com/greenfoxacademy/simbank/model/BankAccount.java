@@ -1,4 +1,4 @@
-package model;
+package com.greenfoxacademy.simbank.model;
 
 public class BankAccount {
 

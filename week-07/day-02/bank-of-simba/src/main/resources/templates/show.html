@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bank Account</title>
+</head>
+<body>
+<h1>Bank Account</h1>
+<div th:object="${bankAccount}">
+    <p th:text="'Name: ' + *{name}" ></p>
+    <p th:text="'Balance: ' + ${#numbers.formatDecimal({bankAccount.balance} , 0, 'NONE', 2, 'POINT')} + ' jounds'"></p>
+    <p th:text="'Animal type: ' + *{animalType}" ></p>
+</div>
+</body>
+</html>
