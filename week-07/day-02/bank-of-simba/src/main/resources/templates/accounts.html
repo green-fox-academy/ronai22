@@ -4,35 +4,34 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
 </head>
 <body>
-<h1>Bank Accounts in Simbank</h1>
-<div>
-<table border='1' style='border-collapse:collapse'>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>BALANCE</th>
-        <th>ANIMAL TYPE</th>
-        <th>IS KING?</th>
-        <th>GOOD OR BAD?</th>
-
-    </tr>
-    <tr th:each="account : ${accounts}">
-        <td th:text="${accountStat.count}"></td>
-        <td th:text="${account.name}"></td>
-        <td th:text="${account.balance}"></td>
-        <td th:text="${account.animalType}"></td>
-        <td  th:if="${account.name} == 'Simba'">Yes</td>
-        <td  th:unless="${account.name} == 'Simba'">No</td>
-        <td  th:if="${account.name} == 'Scar'">Bad Guy</td>
-        <td  th:unless="${account.name} == 'Scar'">Good One</td>
-    </tr>
-</table>
-</div>
-<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
-<script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <main>
+        <h1>Bank Accounts in Simbank</h1>
+            <div>
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>BALANCE</th>
+                        <th>ANIMAL TYPE</th>
+                        <th>IS KING?</th>
+                        <th>GOOD OR BAD?</th>
+                    </tr>
+                    <tr th:each="account : ${accounts}">
+                        <td th:text="${accountStat.count}"></td>
+                        <td th:text="${account.name}"></td>
+                        <td th:text="${account.balance}"></td>
+                        <td th:text="${account.animalType}"></td>
+                        <td th:if="${account.name} == 'Simba'">Yes</td>
+                        <td th:unless="${account.name} == 'Simba'">No</td>
+                        <td th:if="${account.name} == 'Scar'">Bad Guy</td>
+                        <td th:unless="${account.name} == 'Scar'">Good One</td>
+                    </tr>
+                </table>
+            </div>
+    </main>
 </body>
 </html>

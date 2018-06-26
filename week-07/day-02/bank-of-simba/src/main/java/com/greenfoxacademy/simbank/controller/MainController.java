@@ -3,8 +3,11 @@ import com.greenfoxacademy.simbank.model.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class MainController {
@@ -42,5 +45,17 @@ public class MainController {
   public String showAccounts(Model model) {
     model.addAttribute("accounts", accounts);
     return "accounts";
+  }
+
+  @GetMapping ("/donation")
+  public String showDonation() {
+    return "donation";
+  }
+
+  @PostMapping("/donation")
+  public String donate(Model model) {
+    accounts.stream().filter(animal -> animal.getName().equals("Simba")).forEach(animal -> animal.setBalance(animal.getBalance() + 100));
+    accounts.stream().filter(animal -> !animal.getName().equals("Simba")).forEach(animal -> animal.setBalance(animal.getBalance() + 10));
+    return "redirect:/accounts";
   }
 }
