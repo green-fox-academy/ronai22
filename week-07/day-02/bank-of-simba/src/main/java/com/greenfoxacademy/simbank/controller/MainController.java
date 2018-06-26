@@ -40,9 +40,7 @@ public class MainController {
 
   @GetMapping ("/accounts")
   public String showAccounts(Model model) {
-    model.addAttribute("string1", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
-    return "example";
+    model.addAttribute("accounts", accounts);
+    return "accounts";
   }
-
-
 }
