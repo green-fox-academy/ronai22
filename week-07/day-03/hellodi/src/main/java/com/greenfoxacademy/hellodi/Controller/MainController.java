@@ -1,5 +1,5 @@
 package com.greenfoxacademy.hellodi.Controller;
-import com.greenfoxacademy.hellodi.Service.StudentService;
+import com.greenfoxacademy.hellodi.Service.StudentServiceInt;
 import com.greenfoxacademy.hellodi.Service.UtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +14,7 @@ public class MainController {
   UtilityService utilityService;
 
   @Autowired
-  StudentService studentService;
+  StudentServiceInt studentService;
 
   @GetMapping("/useful")
   public String showUsefulPage() {
