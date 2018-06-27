@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Checked Student</title>
+</head>
+<body>
+<h1>Checked Student</h1>
+<h2 th:text="${name}" ></h2>
+<p th:if="${isThere}"> is enrolled.</p>
+<p th:unless="${isThere}"> is not enrolled.</p>
+<div>
+    <a href="/gfa/list">List of the Students</a>
+</div>
+<div>
+    <a href="/gfa/check">Check another Student</a>
+</div>
+<div>
+    <a href="/gfa/add">Add Student</a>
+</div>
+</body>
+</html>

@@ -1,4 +1,5 @@
 package com.greenfoxacademy.hellodi.Controller;
+import com.greenfoxacademy.hellodi.Service.StudentService;
 import com.greenfoxacademy.hellodi.Service.UtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,9 @@ public class MainController {
 
   @Autowired
   UtilityService utilityService;
+
+  @Autowired
+  StudentService studentService;
 
   @GetMapping("/useful")
   public String showUsefulPage() {
@@ -42,7 +46,39 @@ public class MainController {
     return "coding";
   }
 
+  @GetMapping("/gfa")
+  public String greenFoxAcademyMain(Model model) {
+    model.addAttribute("counter", studentService.count());
+    return "gfa";
+  }
 
+  @GetMapping("/gfa/list")
+  public String greenFoxAcademyStudentList(Model model) {
+    model.addAttribute("list", studentService.findAll());
+    return "list";
+  }
 
+  @GetMapping("/gfa/add")
+  public String addGreenFoxAcademyStudent() {
+    return "add";
+  }
+
+  @GetMapping("/gfa/save")
+  public String saveToGreenFoxAcademyStudentList(@RequestParam ("name") String name) {
+    studentService.save(name);
+    return "redirect:/gfa/list";
+  }
+
+  @GetMapping("/gfa/check")
+  public String studentCheckPage() {
+    return "check";
+  }
+
+  @GetMapping("/gfa/checking")
+  public String checkStudent(@RequestParam ("name") String name, Model model) {
+    model.addAttribute("isThere", studentService.check(name));
+    model.addAttribute("name", name);
+    return "checked";
+  }
 
 }
