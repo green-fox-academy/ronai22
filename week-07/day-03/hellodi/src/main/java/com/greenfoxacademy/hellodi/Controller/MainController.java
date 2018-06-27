@@ -1,0 +1,24 @@
+package com.greenfoxacademy.hellodi.Controller;
+import com.greenfoxacademy.hellodi.Service.UtilityService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MainController {
+
+  @Autowired
+  UtilityService utilityService;
+
+  @GetMapping("/useful")
+  public String showUsefulPage() {
+    return "useful";
+  }
+
+  @GetMapping("/useful/colored")
+  public String showUsefulPage(Model model) {
+    model.addAttribute("utilityservice", utilityService.randomColor());
+    return "colored";
+  }
+}

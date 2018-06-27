@@ -1,4 +1,5 @@
 package com.greenfoxacademy.hellodi;
+import com.greenfoxacademy.hellodi.Service.MyColor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
