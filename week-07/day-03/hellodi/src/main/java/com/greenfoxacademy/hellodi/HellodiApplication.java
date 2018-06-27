@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HellodiApplication implements CommandLineRunner {
 
   @Autowired
-  Printer printer;
+  MyColor myColor;
 
   public static void main(String[] args) {
     SpringApplication.run(HellodiApplication.class, args);
@@ -16,6 +16,6 @@ public class HellodiApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-      printer.log("hello");
+    myColor.printColor();
   }
 }
