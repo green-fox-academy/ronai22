@@ -1,8 +1,10 @@
 package com.greenfoxacademy.programmerfoxclub.Service;
 
+import com.greenfoxacademy.programmerfoxclub.models.Fox;
+
 public interface FoxService {
 
-  void loginNewFox(String name);
-  void getFox(String name);
+  void loginFox(String name);
+  Fox getFox(String name);
 
 }

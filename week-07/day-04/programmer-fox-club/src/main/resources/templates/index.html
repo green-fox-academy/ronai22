@@ -8,7 +8,7 @@
 <div>
     <ul>
         <li>
-            <a href="/index.html">Information</a>
+            <a href="/">Information</a>
         </li>
     </ul>
 </div>
@@ -16,16 +16,17 @@
     <img th:src="@{'/greenfox.png'}">
 </div>
 <div>
-    <p>This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
+    <span th:text="${fox != null} ? 'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${#lists.size(fox.tricks)} + ' tricks.'
+    : 'You need to login to see informations about your fox.'"></span>
 </div>
-<div>
+
+<div th:if="${fox != null}">
     <h1>Known Tricks</h1>
-</div>
-<div>
     <ul>
-        <li>write HTML</li>
-        <li>code in Java</li>
+        <li th:each="trick : ${fox.tricks}" th:text="${trick}"></li>
     </ul>
 </div>
+
+
 </body>
 </html>

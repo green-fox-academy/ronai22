@@ -16,12 +16,14 @@ public class FoxServiceImpl implements FoxService {
   }
 
   @Override
-  public void loginNewFox(String name) {
-    foxlist.getFoxList().add(new Fox(name));
+  public void loginFox(String name) {
+    if (foxlist.getFoxFromList(name) == null){
+      foxlist.getFoxList().add(new Fox(name));
+    }
   }
 
   @Override
-  public void getFox(String name) {
-
+  public Fox getFox(String name) {
+    return foxlist.getFoxFromList(name);
   }
 }
