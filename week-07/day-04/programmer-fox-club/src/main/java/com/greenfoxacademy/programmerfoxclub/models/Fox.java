@@ -1,7 +1,6 @@
 package com.greenfoxacademy.programmerfoxclub.models;
 
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +11,7 @@ public class Fox {
   private String food;
   private String drink;
   private List<String> tricks;
+  private List<String> actionHistory;
 
   public Fox() {
   }
@@ -21,6 +21,7 @@ public class Fox {
     food = "bread";
     drink = "water";
     tricks = new ArrayList<>();
+    actionHistory = new ArrayList<>();
   }
 
   public String getName() {
@@ -53,5 +54,13 @@ public class Fox {
 
   public void setTricks(List<String> tricks) {
     this.tricks = tricks;
+  }
+
+  public List<String> getActionHistory() {
+    return actionHistory;
+  }
+
+  public void setActionHistory(List<String> actionHistory) {
+    this.actionHistory = actionHistory;
   }
 }

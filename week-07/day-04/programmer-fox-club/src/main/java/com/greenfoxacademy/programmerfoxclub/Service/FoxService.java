@@ -12,5 +12,7 @@ public interface FoxService {
   void setNewDrink(String drink, String name);
   void setNewFood(String food, String name);
   void addNewTrick(String trick, String name);
+  void addNewFoodAction(String food, String drink, String name);
+  void addNewLearnAction(String trick, String name);
 
 }

@@ -7,16 +7,17 @@
 <body>
 <div>
     <ul>
-        <li><a th:href="@{'/?name=' + ${fox.name}}">Information</a></li>
+        <li th:if="${fox != null}"><a th:href="@{'/?name=' + ${fox.name}}">Information</a></li>
         <li th:if="${fox != null}"><a th:href="@{'/nutritionStore?name=' + ${fox.name}}">Nutrition Store</a></li>
         <li th:if="${fox != null}"><a th:href="@{'/trickCenter?name=' + ${fox.name}}">Trick Center</a></li>
+        <li th:if="${fox != null}"><a th:href="@{'/actionHistory?name=' + ${fox.name}}">Action History</a></li>
     </ul>
 </div>
 <div>
     <img th:src="@{'/greenfox.png'}">
 </div>
 <div>
-    <span th:text="${fox != null} ? 'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${#lists.size(fox.tricks)} + ' tricks.'
+    <span th:text="${fox != null} ? 'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${#lists.size(fox.tricks)} + ' trick(s).'
     : 'You need to login to see informations about your fox.'"></span>
 </div>
 
@@ -24,6 +25,13 @@
     <h1>Known Tricks</h1>
     <ul>
         <li th:each="trick : ${fox.tricks}" th:text="${trick}"></li>
+    </ul>
+</div>
+
+<div th:if="${fox != null}">
+    <h1>Action History</h1>
+    <ul>
+        <li th:each="actions : ${fox.actionHistory}" th:text="${actions}"></li>
     </ul>
 </div>
 
