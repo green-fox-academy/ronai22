@@ -22,7 +22,13 @@ public class FoxController {
     model.addAttribute("fox", foxservice.getFox(name));
     model.addAttribute("drinkList", foxservice.getDrinkList());
     model.addAttribute("foodList", foxservice.getFoodList());
-    model.addAttribute("name", name);
     return "nutritionStore";
+  }
+  @GetMapping("/eating")
+  public String eating(@RequestParam(value= "name") String name, @RequestParam(value= "drink") String drink, @RequestParam(value= "food") String food, Model model) {
+    foxservice.setNewDrink(drink, name);
+    foxservice.setNewFood(food, name);
+    model.addAttribute("fox", foxservice.getFox(name));
+    return "index";
   }
 }

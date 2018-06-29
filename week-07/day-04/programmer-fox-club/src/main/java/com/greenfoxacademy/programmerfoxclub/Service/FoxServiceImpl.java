@@ -42,4 +42,14 @@ public class FoxServiceImpl implements FoxService {
   public String[] getFoodList() {
     return foodList.getFoodlist();
   }
+
+  @Override
+  public void setNewDrink(String drink, String name) {
+    foxlist.getFoxFromList(name).setDrink(drink);
+  }
+
+  @Override
+  public void setNewFood(String food, String name) {
+    foxlist.getFoxFromList(name).setFood(food);
+  }
 }

@@ -8,5 +8,7 @@ public interface FoxService {
   Fox getFox(String name);
   String[] getDrinkList();
   String[] getFoodList();
+  void setNewDrink(String drink, String name);
+  void setNewFood(String food, String name);
 
 }

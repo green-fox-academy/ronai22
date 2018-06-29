@@ -13,6 +13,7 @@
 </div>
 <div>
     <form action="#" th:action="@{/eating}" method="get">
+        <input type="hidden" name="name" th:value="${fox.name}" th:text="${fox.name}" />
         <label for="selectD">Drink</label>
         <select id="selectD" name = "drink" >
             <option th:each="drink : ${drinkList}" th:value="${drink}" th:text="${drink}" ></option>
@@ -21,7 +22,6 @@
         <select id="selectF" name = "food" >
             <option th:each="food : ${foodList}" th:value="${food}" th:text="${food}" ></option>
         </select>
-        <
         <input type="submit" value="Change" />
     </form>
 </div>
