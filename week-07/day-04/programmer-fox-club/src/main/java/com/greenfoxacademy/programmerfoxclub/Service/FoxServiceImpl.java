@@ -1,11 +1,10 @@
 package com.greenfoxacademy.programmerfoxclub.Service;
 
-import com.greenfoxacademy.programmerfoxclub.models.DrinkList;
-import com.greenfoxacademy.programmerfoxclub.models.FoodList;
-import com.greenfoxacademy.programmerfoxclub.models.Fox;
-import com.greenfoxacademy.programmerfoxclub.models.FoxList;
+import com.greenfoxacademy.programmerfoxclub.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.stream.Collectors;
 
 @Service
 public class FoxServiceImpl implements FoxService {
@@ -13,12 +12,14 @@ public class FoxServiceImpl implements FoxService {
   FoxList foxlist;
   DrinkList drinkList;
   FoodList foodList;
+  TrickList trickList;
 
   @Autowired
-  public FoxServiceImpl(FoxList foxlist, DrinkList drinkList, FoodList foodList) {
+  public FoxServiceImpl(FoxList foxlist, DrinkList drinkList, FoodList foodList, TrickList trickList) {
     this.foxlist = foxlist;
     this.drinkList = drinkList;
     this.foodList = foodList;
+    this.trickList = trickList;
   }
 
   @Override
@@ -44,6 +45,11 @@ public class FoxServiceImpl implements FoxService {
   }
 
   @Override
+  public String[] getTrickList() {
+    return trickList.getTrickList();
+  }
+
+  @Override
   public void setNewDrink(String drink, String name) {
     foxlist.getFoxFromList(name).setDrink(drink);
   }
@@ -51,5 +57,12 @@ public class FoxServiceImpl implements FoxService {
   @Override
   public void setNewFood(String food, String name) {
     foxlist.getFoxFromList(name).setFood(food);
+  }
+
+  @Override
+  public void addNewTrick(String trick, String name) {
+    if (foxlist.getFoxFromList(name).getTricks().isEmpty() || foxlist.getFoxFromList(name).getTricks().stream().filter(a -> a.equals(trick)).collect(Collectors.toList()).isEmpty()){
+      foxlist.getFoxFromList(name).getTricks().add(trick);
+    }
   }
 }

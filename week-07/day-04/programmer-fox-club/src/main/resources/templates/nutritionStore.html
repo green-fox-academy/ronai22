@@ -13,7 +13,7 @@
 </div>
 <div>
     <form action="#" th:action="@{/eating}" method="get">
-        <input type="hidden" name="name" th:value="${fox.name}" th:text="${fox.name}" />
+        <input type="hidden" name="name" th:value="${fox.name}" />
         <label for="selectD">Drink</label>
         <select id="selectD" name = "drink" >
             <option th:each="drink : ${drinkList}" th:value="${drink}" th:text="${drink}" ></option>

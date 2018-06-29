@@ -11,7 +11,7 @@ public class Fox {
   private String name;
   private String food;
   private String drink;
-  private List<Trick> tricks;
+  private List<String> tricks;
 
   public Fox() {
   }
@@ -47,11 +47,11 @@ public class Fox {
     this.drink = drink;
   }
 
-  public List<Trick> getTricks() {
+  public List<String> getTricks() {
     return tricks;
   }
 
-  public void setTricks(List<Trick> tricks) {
+  public void setTricks(List<String> tricks) {
     this.tricks = tricks;
   }
 }

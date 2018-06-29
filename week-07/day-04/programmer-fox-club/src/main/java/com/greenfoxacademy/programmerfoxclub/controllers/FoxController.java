@@ -31,4 +31,19 @@ public class FoxController {
     model.addAttribute("fox", foxservice.getFox(name));
     return "index";
   }
+
+  @GetMapping("/learning")
+  public String learning(@RequestParam(value= "name") String name, @RequestParam(value= "trick") String trick, Model model) {
+    foxservice.addNewTrick(trick, name);
+    model.addAttribute("fox", foxservice.getFox(name));
+    return "index";
+  }
+
+  @GetMapping("/trickCenter")
+  public String trickCenter(@RequestParam(value = "name") String name, Model model) {
+    model.addAttribute("fox", foxservice.getFox(name));
+    model.addAttribute("trickList", foxservice.getTrickList());
+    return "trickCenter";
+  }
+
 }
