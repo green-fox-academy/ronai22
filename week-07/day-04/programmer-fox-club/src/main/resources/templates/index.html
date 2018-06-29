@@ -7,7 +7,7 @@
 <body>
 <div>
     <ul>
-        <li><a href="/">Information</a></li>
+        <li><a th:href="@{'/?name=' + ${fox.name}}">Information</a></li>
         <li th:if="${fox != null}"><a th:href="@{'/nutritionStore?name=' + ${fox.name}}">Nutrition Store</a></li>
         <li th:if="${fox != null}"><a th:href="@{'/trickCenter?name=' + ${fox.name}}">Trick Center</a></li>
     </ul>
