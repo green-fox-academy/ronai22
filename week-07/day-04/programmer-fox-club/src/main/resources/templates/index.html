@@ -7,9 +7,8 @@
 <body>
 <div>
     <ul>
-        <li>
-            <a href="/">Information</a>
-        </li>
+        <li><a href="/">Information</a></li>
+        <li th:if="${fox != null}"><a th:href="@{'/nutritionStore?name=' + ${fox.name}}">NutritionStore</a></li>
     </ul>
 </div>
 <div>

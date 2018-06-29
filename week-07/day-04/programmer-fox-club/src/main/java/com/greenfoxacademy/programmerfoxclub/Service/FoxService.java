@@ -6,5 +6,7 @@ public interface FoxService {
 
   void loginFox(String name);
   Fox getFox(String name);
+  String[] getDrinkList();
+  String[] getFoodList();
 
 }

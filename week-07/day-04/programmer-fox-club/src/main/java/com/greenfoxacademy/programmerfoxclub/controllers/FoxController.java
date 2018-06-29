@@ -4,31 +4,25 @@ import com.greenfoxacademy.programmerfoxclub.Service.FoxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class MainController {
+public class FoxController {
 
   private FoxService foxservice;
 
   @Autowired
-  public MainController(FoxService foxservice) {
+  public FoxController(FoxService foxservice) {
     this.foxservice = foxservice;
   }
 
-  @GetMapping("/login")
-  public String loginPageRender() {
-    return "login";
-  }
-
-  @GetMapping("")
-  public String login(@RequestParam (value = "name", required = false) String name, Model model) {
-    if (name == null) {
-      return "redirect:/login";
-    }
-    foxservice.loginFox(name);
+  @GetMapping("/nutritionStore")
+  public String nutritionStore(@RequestParam(value = "name") String name, Model model) {
     model.addAttribute("fox", foxservice.getFox(name));
+    model.addAttribute("drinkList", foxservice.getDrinkList());
+    model.addAttribute("foodList", foxservice.getFoodList());
     model.addAttribute("name", name);
-    return "index";
+    return "nutritionStore";
   }
 }
