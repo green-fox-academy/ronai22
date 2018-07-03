@@ -1,4 +1,4 @@
-package com.greenfoxacademy.listingtodos.Model;
+package com.greenfoxacademy.listingtodos.models;
 
 public class Todo {
 
@@ -8,6 +8,8 @@ public class Todo {
   private boolean done;
 
   public Todo() {
+    this.urgent = false;
+    this.done = false;
   }
 
   public Todo(long id, String title, boolean urgent, boolean done) {
