@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Programmer Fox Club</title>
@@ -17,24 +17,21 @@
     <img th:src="@{'/greenfox.png'}">
 </div>
 <div>
-    <span th:text="${fox != null} ? 'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${#lists.size(fox.tricks)} + ' trick(s).'
+    <span th:text="${fox != null} ? 'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and '
+    + ${fox.drink} + '. He knows ' + ${#lists.size(fox.tricks)} + ' trick(s).'
     : 'You need to login to see informations about your fox.'"></span>
 </div>
-
 <div th:if="${fox != null}">
     <h1>Known Tricks</h1>
     <ul>
         <li th:each="trick : ${fox.tricks}" th:text="${trick}"></li>
     </ul>
 </div>
-
 <div th:if="${fox != null}">
     <h1>Action History</h1>
     <ul>
         <li th:each="actions : ${fox.actionHistory}" th:text="${actions}"></li>
     </ul>
 </div>
-
-
 </body>
 </html>

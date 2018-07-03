@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Action History</title>
@@ -7,6 +7,8 @@
 <body>
 <div>
     <ul>
+        <a th:href="@{'/?name=' + ${fox.name}}">Information</a>
+
         <li th:if="${fox != null}"><a th:href="@{'/?name=' + ${fox.name}}">Information</a></li>
         <li th:if="${fox != null}"><a th:href="@{'/nutritionStore?name=' + ${fox.name}}">Nutrition Store</a></li>
         <li th:if="${fox != null}"><a th:href="@{'/trickCenter?name=' + ${fox.name}}">Trick Center</a></li>
