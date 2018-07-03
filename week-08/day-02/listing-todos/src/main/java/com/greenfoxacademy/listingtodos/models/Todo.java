@@ -1,29 +1,39 @@
 package com.greenfoxacademy.listingtodos.models;
 
+import javax.persistence.*;
+
+@Entity
 public class Todo {
 
-  private long id;
+  @Id
+  @GeneratedValue(strategy=GenerationType.AUTO)
+  private Long id;
+
   private String title;
   private boolean urgent;
   private boolean done;
 
   public Todo() {
+  }
+
+  public Todo(String title) {
+    this.title = title;
     this.urgent = false;
     this.done = false;
   }
 
-  public Todo(long id, String title, boolean urgent, boolean done) {
+  public Todo(Long id, String title, boolean urgent, boolean done) {
     this.id = id;
     this.title = title;
     this.urgent = urgent;
     this.done = done;
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

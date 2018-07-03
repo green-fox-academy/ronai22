@@ -7,7 +7,7 @@
 <body>
 <h1>Todos for today:</h1>
 <ul>
-    <li th:each="todo : ${todoList}" th:text="${todo.name}"></li>
+    <li th:each="todo : ${todos}" th:text="${todo.getTitle()}"></li>
 </ul>
 </body>
 </html>
