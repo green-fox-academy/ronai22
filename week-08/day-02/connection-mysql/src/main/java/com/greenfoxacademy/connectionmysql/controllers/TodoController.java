@@ -47,9 +47,22 @@ public class TodoController {
     return "redirect:/todo/list";
   }
 
-  @RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+  @RequestMapping(value="/{id}/delete", method=RequestMethod.GET)
   public String deleteTodo(@PathVariable(value="id") long id ) {
     todoRepository.deleteById(id);
+    return "redirect:/todo/list";
+  }
+
+  @RequestMapping(value="/{id}/edit", method=RequestMethod.GET)
+  public String editTodoPage(@PathVariable(value="id") long id, Model model) {
+    model.addAttribute("todo", todoRepository.findById(id).get());
+    return "edit";
+  }
+
+
+  @RequestMapping(value="/{id}/edit", method=RequestMethod.POST)
+  public String editTodo(@ModelAttribute Todo todo) {
+    todoRepository.save(todo);
     return "redirect:/todo/list";
   }
 }

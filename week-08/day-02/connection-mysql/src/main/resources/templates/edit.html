@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Todo Crud App</title>
+</head>
+<body>
+<h1>Edit Todo</h1>
+<form action="#" th:action="@{'edit'}" th:object="${todo}" method="post" >
+    <label for="titleId">Todo Description</label>
+    <input type="text" id="titleId" name="title" th:field="*{title}">
+    <div>
+        <label for="urgentId">Urgent</label>
+        <input type="checkbox" id="urgentId" name="urgent" th th:value="*{urgent}" th:field="*{urgent}">
+    </div>
+    <div>
+        <label for="doneId">Done</label>
+        <input type="checkbox" id="doneId" name="done" th:value="*{done}" th:field="*{done}">
+    </div>
+    <div>
+        <input type="submit" value="Submit"> <a href="/todo/list">Cancel</a>
+    </div>
+</form>
+</body>
+</html>
