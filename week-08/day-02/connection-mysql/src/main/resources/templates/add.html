@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Todo Crud App</title>
+</head>
+<body>
+<h1>Add New Todo</h1>
+<form action="#" th:action="@{addtodo}" th:object="${newTodo}" method="post" >
+    <input type="text" name="title" th:field="*{title}">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
