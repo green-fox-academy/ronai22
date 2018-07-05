@@ -25,6 +25,7 @@ public class TodoController {
     if (isActive == null) {
       return "redirect:/todo/list";
     }
+    model.addAttribute("newTodo", new Todo());
     model.addAttribute("todos", service.findActive(isActive));
     return "todolist";
   }
@@ -46,6 +47,13 @@ public class TodoController {
   public String addTodo(@ModelAttribute Todo todo) {
     todoRepository.save(todo);
     return "redirect:/todo/list";
+  }
+
+  @RequestMapping(value="/search", method=RequestMethod.POST)
+  public String searchTodo(@RequestParam("search") String search, Model model) {
+    model.addAttribute("todos", todoRepository.findByTitleContaining(search));
+    model.addAttribute("newTodo", new Todo());
+    return "todolist";
   }
 
   @RequestMapping(value="/{id}/delete", method=RequestMethod.GET)
