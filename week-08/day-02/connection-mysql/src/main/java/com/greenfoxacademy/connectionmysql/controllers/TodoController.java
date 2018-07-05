@@ -31,6 +31,7 @@ public class TodoController {
 
   @RequestMapping(value="/list", method=RequestMethod.GET)
   public String list(Model model) {
+    model.addAttribute("newTodo", new Todo());
     model.addAttribute("todos", todoRepository.findAll());
     return "todolist";
   }

@@ -7,22 +7,43 @@
     <title>Todo Crud App</title>
 </head>
 <body>
-<h1>Edit Todo</h1>
-<form action="#" th:action="@{'edit'}" th:object="${todo}" method="post" >
-    <label for="titleId">Todo Description</label>
-    <input type="text" id="titleId" name="title" th:field="*{title}">
-    <div>
-        <label for="urgentId">Urgent</label>
-        <input type="checkbox" id="urgentId" name="urgent" th:value="*{urgent}" th:field="*{urgent}">
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h1 class="text-center">Edit Todo</h1>
+            </br>
+            <form class="form-horizontal" action="#" th:action="@{'edit'}" th:object="${todo}" method="post" >
+                <div class="form-group">
+                    <label for="titleId" class="col-sm-2 control-label" >Description</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="titleId" class="form-control" name="title" th:field="*{title}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <input type="checkbox" name="urgent" th:value="*{urgent}" th:field="*{urgent}"> Urgent
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <input type="checkbox" name="done" th:value="*{done}" th:field="*{done}"> Done
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" class="btn btn-default btn-sm" value="Submit"> <a class="btn btn-warning btn-sm" role="button" href="/todo/list">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
     </div>
-    <div>
-        <label for="doneId">Done</label>
-        <input type="checkbox" id="doneId" name="done" th:value="*{done}" th:field="*{done}">
-    </div>
-    <div>
-        <input type="submit" value="Submit"> <a href="/todo/list">Cancel</a>
-    </div>
-</form>
+</div>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
