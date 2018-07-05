@@ -59,7 +59,6 @@ public class TodoController {
     return "edit";
   }
 
-
   @RequestMapping(value="/{id}/edit", method=RequestMethod.POST)
   public String editTodo(@ModelAttribute Todo todo) {
     todoRepository.save(todo);
