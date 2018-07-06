@@ -6,16 +6,82 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
     <title>New Reddit</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6" layout:fragment="content">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" layout:fragment="content">
                 <h1 class="text-center">TLDREDDIT</h1>
+                <div class="col-xs-12" style="height:70px;"></div>
+                <table class="table table-borderless">
+                </table>
+
+
+                <div class="panel panel-default panel-table">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col col-xs-6">
+                                <h3 class="panel-title">REDDIT POSTS</h3>
+                            </div>
+                            <div class="col col-xs-6 text-right">
+                                <a class="btn btn-primary btn-sm btn-lg" role="button" th:href="@{add}">Add NEW Post</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-list">
+                            <tbody>
+                            <tr>
+                            <tr th:each="post : ${postList}">
+                                <td th:text="${post.getScore()}" ></td>
+                                <td>
+                                    <a th:href="@{${post.id} + '/score/+'}">
+                                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{${post.id} + '/score/-'}">
+                                        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{${post.url}}">
+                                        <span th:text="${post.getTitle()}"></span>
+                                    </a>
+                                </td>
+                                <td th:text="${post.getCreateDateTime().toLocalDate()}" ></td>
+                            </tr>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col col-xs-4">Page 1 of 5
+                            </div>
+                            <div class="col col-xs-8">
+                                <ul class="pagination hidden-xs pull-right">
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                </ul>
+                                <ul class="pagination visible-xs pull-right">
+                                    <li><a href="#">«</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>

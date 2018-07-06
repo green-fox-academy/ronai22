@@ -1,18 +1,16 @@
 package com.greenfoxacademy.newreddit.services;
 
-import com.greenfoxacademy.newreddit.repositories.PostRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.greenfoxacademy.newreddit.models.Post;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class PostService {
+public interface PostService  {
 
-  PostRepository postRepository;
-
-  @Autowired
-  public PostService(PostRepository postRepository) {
-    this.postRepository = postRepository;
-  }
-
+  void save(Post post);
+  List<Post> findAll();
+  void scorePost(long id, String type);
+  List<Post> findAllByScoreOrder();
 
 }
