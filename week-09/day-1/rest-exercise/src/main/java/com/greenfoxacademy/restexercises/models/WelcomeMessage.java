@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restexercises.models;
 
-public class WelcomeMessage implements MessageClass {
+public class WelcomeMessage implements MessageInterface {
 
   String welcome_message;
 

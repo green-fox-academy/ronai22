@@ -1,7 +1,7 @@
 package com.greenfoxacademy.restexercises.models;
 
 
-public class Doubler implements MessageClass {
+public class Doubler implements MessageInterface {
 
   int received;
   int result;

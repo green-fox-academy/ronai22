@@ -4,10 +4,7 @@ package com.greenfoxacademy.restexercises.controllers;
 import com.greenfoxacademy.restexercises.models.*;
 import com.greenfoxacademy.restexercises.services.ExService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ExerciseRestController {
@@ -20,7 +17,7 @@ public class ExerciseRestController {
   }
 
   @GetMapping("/doubling")
-  public MessageClass doubling(@RequestParam(value = "input", required = false) Integer number) {
+  public MessageInterface doubling(@RequestParam(value = "input", required = false) Integer number) {
     if (number != null) {
       return (new Doubler(number));
     }
@@ -28,7 +25,7 @@ public class ExerciseRestController {
   }
 
   @GetMapping("/greeter")
-  public MessageClass greeting(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "title", required = false) String title) {
+  public MessageInterface greeting(@RequestParam(value = "name", required = false) String name, @RequestParam(value = "title", required = false) String title) {
     if (title != null && name != null) {
       return (new WelcomeMessage(name, title));
     } else if (title == null && name != null) {
@@ -38,16 +35,15 @@ public class ExerciseRestController {
   }
 
   @GetMapping("/appenda/{appendable}")
-  public MessageClass appenda(@PathVariable(value = "appendable") String appendable) {
+  public MessageInterface appenda(@PathVariable(value = "appendable") String appendable) {
     return new AppendableMessage(appendable);
   }
 
-
-  @GetMapping("/dountil/{what}")
-  public MessageClass dountil(@PathVariable(value = "what", required = false) String what) {
-
-
-    return null;
+  @PostMapping("/dountil/{what}")
+  public MessageInterface dountil(@PathVariable(value = "what", required = false) String what, @RequestBody(required = false) Until until) {
+    if (until == null) {
+      return new ErrorClass("Please provide a number!");
+    }
+    return new Result(service.untilChecker(what, until));
   }
-
 }

@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restexercises.models;
 
-public class AppendableMessage implements MessageClass {
+public class AppendableMessage implements MessageInterface {
 
   String appended;
 
