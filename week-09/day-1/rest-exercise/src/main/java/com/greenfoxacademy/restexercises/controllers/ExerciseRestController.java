@@ -46,4 +46,13 @@ public class ExerciseRestController {
     }
     return new Result(service.untilChecker(what, until));
   }
+
+  @PostMapping("/arrays")
+  public MessageInterface arrayCalculator(@RequestBody(required = false) Arrays arrays) {
+    if (arrays != null) {
+      return service.getArrayCalculation(arrays);
+    }
+    return new ErrorClass("Please provide what to do with the numbers!");
+  }
+
 }
