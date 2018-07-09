@@ -1,7 +1,7 @@
 package com.greenfoxacademy.restexercises.models;
 
 
-public class Doubler {
+public class Doubler extends MessageClass {
 
   int received;
   int result;
@@ -9,9 +9,9 @@ public class Doubler {
   public Doubler() {
   }
 
-  public Doubler(int received, int result) {
+  public Doubler(int received) {
     this.received = received;
-    this.result = 2 * result;
+    this.result = 2 * received;
   }
 
   public int getReceived() {
