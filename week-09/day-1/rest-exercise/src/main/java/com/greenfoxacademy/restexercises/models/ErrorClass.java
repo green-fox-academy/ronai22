@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restexercises.models;
 
-public class ErrorClass extends MessageClass {
+public class ErrorClass implements MessageClass {
 
   String error;
 

@@ -1,7 +1,7 @@
 package com.greenfoxacademy.restexercises.models;
 
 
-public class Doubler extends MessageClass {
+public class Doubler implements MessageClass {
 
   int received;
   int result;
