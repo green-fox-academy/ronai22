@@ -2,7 +2,7 @@ package com.greenfoxacademy.restexercises.models;
 
 public class ErrorClass implements MessageInterface {
 
-  String error;
+  private String error;
 
   public ErrorClass(String error) {
     this.error = error;

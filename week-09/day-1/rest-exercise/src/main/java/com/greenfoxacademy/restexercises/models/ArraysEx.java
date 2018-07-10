@@ -1,14 +1,14 @@
 package com.greenfoxacademy.restexercises.models;
 
-public class Arrays {
+public class ArraysEx {
 
-  String what;
-  int[] numbers;
+  private String what;
+  private int[] numbers;
 
-  public Arrays() {
+  public ArraysEx() {
   }
 
-  public Arrays(String what, int[] numbers) {
+  public ArraysEx(String what, int[] numbers) {
     this.what = what;
     this.numbers = numbers;
   }

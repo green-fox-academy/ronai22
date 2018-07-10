@@ -3,8 +3,8 @@ package com.greenfoxacademy.restexercises.models;
 
 public class Doubler implements MessageInterface {
 
-  int received;
-  int result;
+  private int received;
+  private int result;
 
   public Doubler() {
   }

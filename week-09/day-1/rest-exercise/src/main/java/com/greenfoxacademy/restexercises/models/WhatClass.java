@@ -2,7 +2,7 @@ package com.greenfoxacademy.restexercises.models;
 
 public class WhatClass implements MessageInterface {
 
-  int until;
+  private int until;
 
   public WhatClass(int until) {
     this.until = until;

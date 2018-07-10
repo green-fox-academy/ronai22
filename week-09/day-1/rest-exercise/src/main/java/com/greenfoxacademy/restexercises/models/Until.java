@@ -2,7 +2,7 @@ package com.greenfoxacademy.restexercises.models;
 
 public class Until implements MessageInterface {
 
-  int until;
+  private int until;
 
   public Until() {
   }

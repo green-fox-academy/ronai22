@@ -2,7 +2,7 @@ package com.greenfoxacademy.restexercises.models;
 
 public class WelcomeMessage implements MessageInterface {
 
-  String welcome_message;
+  private String welcome_message;
 
   public WelcomeMessage(String name, String title) {
     this.welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";

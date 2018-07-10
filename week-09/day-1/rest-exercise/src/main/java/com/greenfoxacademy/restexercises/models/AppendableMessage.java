@@ -2,7 +2,7 @@ package com.greenfoxacademy.restexercises.models;
 
 public class AppendableMessage implements MessageInterface {
 
-  String appended;
+  private String appended;
 
   public AppendableMessage(String appendable) {
     this.appended = appendable + "a";

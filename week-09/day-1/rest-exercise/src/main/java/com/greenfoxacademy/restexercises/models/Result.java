@@ -2,7 +2,7 @@ package com.greenfoxacademy.restexercises.models;
 
 public class Result implements MessageInterface {
 
-  int result;
+  private int result;
 
   public Result() {
   }
