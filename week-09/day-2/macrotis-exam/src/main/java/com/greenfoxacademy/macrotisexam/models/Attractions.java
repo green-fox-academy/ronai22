@@ -11,7 +11,7 @@ public class Attractions {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
-  private String name;
+  private String attrName;
   private String city;
   private int price;
   private float latitude;
@@ -23,8 +23,8 @@ public class Attractions {
   public Attractions() {
   }
 
-  public Attractions(String name, String city, int price, float latitude, float longitude, String category, int duration, float recommendedAge) {
-    this.name = name;
+  public Attractions(String attrName, String city, int price, float latitude, float longitude, String category, int duration, float recommendedAge) {
+    this.attrName = attrName;
     this.city = city;
     this.price = price;
     this.latitude = latitude;
@@ -42,12 +42,12 @@ public class Attractions {
     this.id = id;
   }
 
-  public String getName() {
-    return name;
+  public String getAttrName() {
+    return attrName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setAttrName(String attrName) {
+    this.attrName = attrName;
   }
 
   public String getCity() {
