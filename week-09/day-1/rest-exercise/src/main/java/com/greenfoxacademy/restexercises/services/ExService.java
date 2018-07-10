@@ -24,7 +24,7 @@ public class ExService {
     return factorizer(number.getUntil());
   }
 
-  private int factorizer(int number) {
+  public int factorizer(int number) {
     int factor = 1;
     if(number == 1) {
       return factor;
