@@ -21,4 +21,26 @@ public class AttractionServiceImpl implements AttractionService {
   public List<Attractions> findAllAttractions() {
     return repository.findAll();
   }
+
+  @Override
+  public void saveAttraction(Attractions attraction) {
+    repository.save(attraction);
+  }
+
+  @Override
+  public Attractions findByIdAttraction(long id) {
+    return repository.findById(id).get();
+  }
+
+  @Override
+  public List<Attractions> findFilteredAttractions(String category, String city) {
+    if(category == null && city == null) {
+      return repository.findAll();
+    } else if (category != null && city == null) {
+      return repository.findByCategory(category);
+    } else if (category == null) {
+      return repository.findByCity(city);
+    }
+    return repository.findByCityAndCategory(city, category);
+  }
 }

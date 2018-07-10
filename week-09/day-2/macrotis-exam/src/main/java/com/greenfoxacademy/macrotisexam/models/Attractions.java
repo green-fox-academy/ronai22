@@ -1,15 +1,14 @@
 package com.greenfoxacademy.macrotisexam.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Attractions {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence-generator")
+  @SequenceGenerator(name = "sequence-generator",
+          sequenceName = "attractions_sequence", initialValue = 7)
   private long id;
   private String attrName;
   private String city;

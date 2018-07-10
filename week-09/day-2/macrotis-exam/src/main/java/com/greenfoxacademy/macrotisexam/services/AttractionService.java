@@ -9,5 +9,8 @@ import java.util.List;
 public interface AttractionService {
 
   List<Attractions> findAllAttractions();
+  void saveAttraction (Attractions attraction);
+  Attractions findByIdAttraction(long id);
+  List<Attractions> findFilteredAttractions(String category, String city);
 
 }
