@@ -1,9 +1,7 @@
 package com.greenfoxacademy.newreddit.services;
-
 import com.greenfoxacademy.newreddit.models.Post;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-
 import java.awt.print.Pageable;
 import java.util.List;
 

@@ -1,5 +1,4 @@
 package com.greenfoxacademy.newreddit.controllers;
-
 import com.greenfoxacademy.newreddit.models.Post;
 import com.greenfoxacademy.newreddit.services.PostService;
 import com.greenfoxacademy.newreddit.services.PostServiceImpl;
@@ -7,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 
 @Controller
 public class PostController {
