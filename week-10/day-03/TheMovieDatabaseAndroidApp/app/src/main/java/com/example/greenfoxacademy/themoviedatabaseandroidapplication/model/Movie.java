@@ -5,13 +5,9 @@ public class Movie {
   public Movie() {
   }
 
-  private String original_title;
+  private String poster_path;
 
-  public String getOriginal_title() {
-    return original_title;
-  }
-
-  public void setOriginal_title(String original_title) {
-    this.original_title = original_title;
+  public String getPoster_path() {
+    return poster_path;
   }
 }
