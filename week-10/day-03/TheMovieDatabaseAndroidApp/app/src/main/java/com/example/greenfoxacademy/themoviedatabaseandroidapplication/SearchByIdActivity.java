@@ -54,6 +54,5 @@ public class SearchByIdActivity extends AppCompatActivity {
         Toast.makeText(SearchByIdActivity.this, "error :(", Toast.LENGTH_SHORT).show();
       }
     });
-
   }
 }
