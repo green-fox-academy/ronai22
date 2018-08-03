@@ -2,14 +2,14 @@ package com.example.greenfoxacademy.themoviedatabaseandroidapplication.model;
 
 public class Movie {
 
+  private String poster_path;
+  private String title;
+
   public Movie() {
   }
 
-  private String poster_path;
-  private String original_title;
-
-  public String getOriginal_title() {
-    return original_title;
+  public String getTitle() {
+    return title;
   }
 
   public String getPoster_path() {

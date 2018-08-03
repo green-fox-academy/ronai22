@@ -17,7 +17,7 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
   private List<Movie> values;
 
   public MovieAdapter(Context context, List<Movie> values) {
-    super(context, R.layout.activity_discover_new_movies, values);
+    super(context, R.layout.list_item_pagination, values);
 
     this.context = context;
     this.values = values;
@@ -30,13 +30,13 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
     if (row == null) {
       LayoutInflater inflater =
               (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-      row = inflater.inflate(R.layout.activity_discover_new_movies, parent, false);
+      row = inflater.inflate(R.layout.list_item_pagination, parent, false);
     }
 
     TextView textView = (TextView) row.findViewById(R.id.list_item_pagination_text);
 
     Movie item = values.get(position);
-    String message = item.getOriginal_title();
+    String message = item.getTitle();
     textView.setText(message);
 
     return row;
