@@ -2,10 +2,12 @@ package com.example.greenfoxacademy.themoviedatabaseandroidapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
-import com.example.greenfoxacademy.themoviedatabaseandroidapplication.adapter.MovieAdapter;
-import com.example.greenfoxacademy.themoviedatabaseandroidapplication.model.Movie;
+import com.example.greenfoxacademy.themoviedatabaseandroidapplication.adapter.RecyclerViewAdapter;
 import com.example.greenfoxacademy.themoviedatabaseandroidapplication.model.Result;
 import com.example.greenfoxacademy.themoviedatabaseandroidapplication.service.MovieDatabaseClient;
 import retrofit2.Call;
@@ -14,13 +16,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import java.util.List;
-
 public class DiscoverNewMoviesActivity extends AppCompatActivity {
 
   Button btnDiscover;
-  private ListView listView;
-  EditText yearInput;
+  private EditText yearInput;
 
   private RadioGroup rbAdult;
   private RadioButton adultYes, adultNo;
@@ -29,7 +28,7 @@ public class DiscoverNewMoviesActivity extends AppCompatActivity {
   private RadioGroup rbOrder;
   private RadioButton popularity, release, revenue;
   private String orderSelection;
-
+  private static final String TAG = "MainActivity";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +44,6 @@ public class DiscoverNewMoviesActivity extends AppCompatActivity {
     release = (RadioButton) findViewById(R.id.rbOrderRelease);
     revenue = (RadioButton) findViewById(R.id.rbOrderRevenue);
 
-    listView = (ListView) findViewById(R.id.pagination_list);
-
     btnDiscover = (Button) findViewById(R.id.btnDiscover);
     btnDiscover.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -54,7 +51,7 @@ public class DiscoverNewMoviesActivity extends AppCompatActivity {
         yearInput = findViewById(R.id.yearInput);
         int adultSelectedId = rbAdult.getCheckedRadioButtonId();
 
-        if(adultSelectedId == adultYes.getId()) {
+        if (adultSelectedId == adultYes.getId()) {
           adultSelection = true;
         } else {
           adultSelection = false;
@@ -79,13 +76,22 @@ public class DiscoverNewMoviesActivity extends AppCompatActivity {
         Retrofit retrofit = builder.build();
 
         MovieDatabaseClient client = retrofit.create(MovieDatabaseClient.class);
-        Call<Result> call = client.discoverMovie("en-US", orderSelection, adultSelection, false, 1, 2016);
+        Call<Result> call = client.discoverMovie("en-US",
+                orderSelection,
+                adultSelection,
+                false,
+                1,
+                Integer.parseInt(yearInput.getText().toString()));
 
         call.enqueue(new Callback<Result>() {
           @Override
           public void onResponse(Call<Result> call, Response<Result> response) {
             Result movies = response.body();
-            listView.setAdapter(new MovieAdapter(DiscoverNewMoviesActivity.this, movies.getResults()));
+            Log.d(TAG, "initRecyclerView: init recyclerview.");
+            RecyclerView recyclerView = findViewById(R.id.pagination_list);
+            RecyclerViewAdapter adapter = new RecyclerViewAdapter(DiscoverNewMoviesActivity.this, movies.getResults());
+            recyclerView.setAdapter(adapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(DiscoverNewMoviesActivity.this));
           }
 
           @Override

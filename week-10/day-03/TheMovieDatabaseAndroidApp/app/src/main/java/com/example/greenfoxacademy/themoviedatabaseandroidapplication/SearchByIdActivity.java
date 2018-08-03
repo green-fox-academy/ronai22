@@ -21,6 +21,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SearchByIdActivity extends AppCompatActivity {
 
   EditText searchInput;
+  private TextView title;
+  private TextView overview;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,16 @@ public class SearchByIdActivity extends AppCompatActivity {
     call.enqueue(new Callback<Movie>() {
       @Override
       public void onResponse(Call<Movie> call, Response<Movie> response) {
-        Movie repos = response.body();
+        Movie movie = response.body();
+
+        TextView title = (TextView) findViewById(R.id.movieTitle);
+        title.setText(movie.getTitle());
+
+        TextView overview = (TextView) findViewById(R.id.overview);
+        overview.setText(movie.getOverview());
+
         ImageView image = (ImageView) findViewById(R.id.iv);
-        Picasso.get().load("https://image.tmdb.org/t/p/w1280/" + repos.getPoster_path()).into(image);
+        Picasso.get().load("https://image.tmdb.org/t/p/w1280/" + movie.getPoster_path()).into(image);
       }
 
       @Override
