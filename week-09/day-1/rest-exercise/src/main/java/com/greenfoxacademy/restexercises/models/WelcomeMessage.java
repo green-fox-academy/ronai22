@@ -4,6 +4,9 @@ public class WelcomeMessage implements MessageInterface {
 
   private String welcome_message;
 
+  public WelcomeMessage() {
+  }
+
   public WelcomeMessage(String name, String title) {
     this.welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";
   }

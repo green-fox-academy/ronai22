@@ -16,10 +16,7 @@ public interface MovieDatabaseClient {
 
   @GET("/3/discover/movie?api_key=d006b36d9c0c6bbe86c9d5e1ea0dc0f2")
   Call<Result> discoverMovie(
-          @Query("language") String lan,
           @Query("sort_by") String sort,
           @Query("include_adult") Boolean adult,
-          @Query("include_video") Boolean video,
-          @Query("page") Integer pageNum,
           @Query("year") Integer year);
 }

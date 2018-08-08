@@ -51,6 +51,9 @@ public class DiscoverNewMoviesActivity extends AppCompatActivity {
         yearInput = findViewById(R.id.yearInput);
         int adultSelectedId = rbAdult.getCheckedRadioButtonId();
 
+        System.out.println(adultSelectedId);
+        System.out.println(adultYes.getId());
+
         if (adultSelectedId == adultYes.getId()) {
           adultSelection = true;
         } else {
@@ -76,11 +79,9 @@ public class DiscoverNewMoviesActivity extends AppCompatActivity {
         Retrofit retrofit = builder.build();
 
         MovieDatabaseClient client = retrofit.create(MovieDatabaseClient.class);
-        Call<Result> call = client.discoverMovie("en-US",
+        Call<Result> call = client.discoverMovie(
                 orderSelection,
                 adultSelection,
-                false,
-                1,
                 Integer.parseInt(yearInput.getText().toString()));
 
         call.enqueue(new Callback<Result>() {
